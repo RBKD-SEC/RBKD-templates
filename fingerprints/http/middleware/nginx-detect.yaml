@@ -1,0 +1,26 @@
+id: nginx-detect
+
+info:
+  name: Nginx Detect
+  author: internal-audit
+  severity: info
+  description: Detects Nginx web server via header or title.
+  metadata:
+    max-request: 1
+  tags: fingerprint,http,nginx,middleware,internal-audit
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "nginx"
+
+      - type: word
+        part: body
+        words:
+          - "Welcome to nginx!"
+        condition: or

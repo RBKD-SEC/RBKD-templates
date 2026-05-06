@@ -1,0 +1,23 @@
+id: snmp-public-community
+
+info:
+  name: SNMP Public Community String
+  author: internal-audit
+  severity: medium
+  description: Detects SNMP service using default public community string (read-only sysDescr probe).
+  metadata:
+    max-request: 1
+  tags: network,snmp,misconfig,internal-audit,safe
+
+tcp:
+  - inputs:
+      - data: "\x30\x26\x02\x01\x00\x04\x06\x70\x75\x62\x6c\x69\x63\xa0\x19\x02\x04\x00\x00\x00\x01\x02\x01\x00\x02\x01\x00\x30\x0b\x30\x09\x06\x05\x2b\x06\x01\x02\x01\x01\x01\x05\x00"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 161
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "0\x82"

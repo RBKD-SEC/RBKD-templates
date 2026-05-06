@@ -1,0 +1,30 @@
+# Source: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/technologies/jenkins-detect.yaml
+# Modified: 收敛 matcher，保留核心信号
+
+id: jenkins-detect
+
+info:
+  name: Jenkins Detect
+  author: pdteam, internal-audit
+  severity: info
+  description: Detects Jenkins CI via header or title.
+  metadata:
+    max-request: 1
+  tags: fingerprint,http,jenkins,devops,internal-audit
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "X-Jenkins"
+
+      - type: word
+        part: body
+        words:
+          - "Jenkins"
+          - "Dashboard [Jenkins]"
+        condition: or

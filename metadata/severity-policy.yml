@@ -1,0 +1,14 @@
+info:
+  usage: service fingerprint, version disclosure, non-sensitive banner
+
+low:
+  usage: weak misconfiguration without direct sensitive access
+
+medium:
+  usage: sensitive exposure, anonymous read-only access, risky debug endpoint
+
+high:
+  usage: confirmed default credential, unauthenticated sensitive data, database no-auth
+
+critical:
+  usage: confirmed unauthenticated code execution or destructive administrative access

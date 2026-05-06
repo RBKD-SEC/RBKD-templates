@@ -1,0 +1,22 @@
+id: nexus-detect
+
+info:
+  name: Nexus Repository Manager Detect
+  author: internal-audit
+  severity: info
+  description: Detects Sonatype Nexus via title.
+  metadata:
+    max-request: 1
+  tags: fingerprint,http,nexus,devops,internal-audit
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Nexus Repository Manager"
+          - "Nexus"
+        condition: or

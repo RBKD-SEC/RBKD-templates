@@ -1,0 +1,27 @@
+# Source: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/exposures/configs/phpinfo-files.yaml
+# Modified: 收敛路径
+
+id: phpinfo-exposed
+
+info:
+  name: phpinfo Exposed
+  author: pdteam, internal-audit
+  severity: medium
+  description: Detects exposed phpinfo.php page.
+  metadata:
+    max-request: 2
+  tags: http,exposure,phpinfo,sensitive-files,internal-audit,safe
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/phpinfo.php"
+      - "{{BaseURL}}/info.php"
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "phpinfo()"
+          - "PHP Version"
+        condition: and

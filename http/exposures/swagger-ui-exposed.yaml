@@ -1,0 +1,27 @@
+# Source: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/exposures/apis/swagger-api.yaml
+# Modified: 收敛路径，只读探测
+
+id: swagger-ui-exposed
+
+info:
+  name: Swagger UI Exposed
+  author: pdteam, internal-audit
+  severity: medium
+  description: Detects exposed Swagger UI or OpenAPI documentation.
+  metadata:
+    max-request: 2
+  tags: http,exposure,swagger,openapi,internal-audit,safe
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/swagger-ui.html"
+      - "{{BaseURL}}/swagger-ui/index.html"
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Swagger UI"
+          - "swagger-ui"
+        condition: or

@@ -1,0 +1,25 @@
+id: rdp-detect
+
+info:
+  name: RDP Detect
+  author: internal-audit
+  severity: info
+  description: Detects Remote Desktop Protocol service.
+  metadata:
+    max-request: 1
+  tags: fingerprint,network,rdp,internal-audit
+
+tcp:
+  - inputs:
+      - data: "\x03\x00\x00\x13\x0e\xe0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 3389
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "RDP"
+          - "Redirected"
+        condition: or

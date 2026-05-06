@@ -1,0 +1,22 @@
+id: gitlab-detect
+
+info:
+  name: GitLab Detect
+  author: internal-audit
+  severity: info
+  description: Detects GitLab via title or CSRF token pattern.
+  metadata:
+    max-request: 1
+  tags: fingerprint,http,gitlab,devops,internal-audit
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/users/sign_in"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "GitLab"
+          - "csrf-token"
+        condition: and

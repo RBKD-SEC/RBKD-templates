@@ -1,0 +1,26 @@
+id: postgres-detect
+
+info:
+  name: PostgreSQL Detect
+  author: internal-audit
+  severity: info
+  description: Detects PostgreSQL service via banner.
+  metadata:
+    max-request: 1
+  tags: fingerprint,network,postgres,database,internal-audit
+
+tcp:
+  - inputs:
+      - data: "\x00\x00\x00\x08\x04\xd2\x16\x2f"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 5432
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "R"
+          - "FATAL"
+          - "SFATAL"
+        condition: or

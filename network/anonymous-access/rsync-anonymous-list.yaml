@@ -1,0 +1,25 @@
+id: rsync-anonymous-list
+
+info:
+  name: Rsync Anonymous List
+  author: internal-audit
+  severity: medium
+  description: Detects Rsync service allowing anonymous module listing (read-only).
+  metadata:
+    max-request: 2
+  tags: network,rsync,anonymous,internal-audit,safe
+
+tcp:
+  - inputs:
+      - data: "@RSYNCD: 31.0\n"
+        read: 1024
+      - data: "#list\n"
+        read: 2048
+    host:
+      - "{{Hostname}}"
+    port: 873
+    matchers:
+      - type: regex
+        part: raw
+        regex:
+          - '^[a-zA-Z0-9_-]+\s+'

@@ -1,0 +1,22 @@
+id: prometheus-detect
+
+info:
+  name: Prometheus Detect
+  author: internal-audit
+  severity: info
+  description: Detects Prometheus monitoring server via title.
+  metadata:
+    max-request: 1
+  tags: fingerprint,http,prometheus,panels,internal-audit
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Prometheus Time Series Collection and Processing Server"
+          - "prometheus"
+        condition: or

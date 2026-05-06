@@ -1,0 +1,25 @@
+# Source: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/misconfiguration/apache/apache-server-status.yaml
+# Modified: 仅保留只读探测
+
+id: apache-server-status-exposed
+
+info:
+  name: Apache Server Status Exposed
+  author: pdteam, internal-audit
+  severity: medium
+  description: Detects exposed Apache mod_status page.
+  metadata:
+    max-request: 1
+  tags: http,exposure,apache,internal-audit,safe
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/server-status"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Apache Server Status"
+          - "Server Version"
+        condition: and

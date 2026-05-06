@@ -1,0 +1,288 @@
+# service-map.yaml
+# 维护服务与模板关系，供 workflow 编排和文档索引使用。
+#
+# 每个服务应包含：
+#   ports: 常用端口列表
+#   fingerprint: 指纹模板路径列表
+#   checks:
+#     safe: 低风险只读模板路径列表
+#     optional: 有锁定/告警风险的模板路径列表
+#   tags: 服务分类标签
+
+tomcat:
+  ports: [8080]
+  fingerprint:
+    - fingerprints/http/middleware/tomcat-detect.yaml
+  checks:
+    safe:
+      - http/exposures/git-config-exposed.yaml
+    optional: []
+  tags: [middleware, web]
+
+spring-boot:
+  ports: [8080, 8081]
+  fingerprint:
+    - fingerprints/http/middleware/spring-boot-detect.yaml
+  checks:
+    safe:
+      - http/exposures/spring-boot-actuator-exposed.yaml
+      - http/exposures/swagger-ui-exposed.yaml
+    optional: []
+  tags: [middleware, web]
+
+jenkins:
+  ports: [8080, 8081]
+  fingerprint:
+    - fingerprints/http/devops/jenkins-detect.yaml
+  checks:
+    safe:
+      - http/exposures/swagger-ui-exposed.yaml
+    optional: []
+  tags: [devops, ci, web]
+
+grafana:
+  ports: [3000]
+  fingerprint:
+    - fingerprints/http/panels/grafana-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [panels, monitoring, web]
+
+kibana:
+  ports: [5601]
+  fingerprint:
+    - fingerprints/http/panels/kibana-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [panels, monitoring, web]
+
+prometheus:
+  ports: [9090]
+  fingerprint:
+    - fingerprints/http/panels/prometheus-detect.yaml
+  checks:
+    safe:
+      - http/exposures/prometheus-metrics-exposed.yaml
+    optional: []
+  tags: [panels, monitoring, web]
+
+gitlab:
+  ports: [80, 443]
+  fingerprint:
+    - fingerprints/http/devops/gitlab-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [devops, web]
+
+nexus:
+  ports: [8081]
+  fingerprint:
+    - fingerprints/http/devops/nexus-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [devops, web]
+
+harbor:
+  ports: [80, 443]
+  fingerprint:
+    - fingerprints/http/devops/harbor-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [devops, web]
+
+nginx:
+  ports: [80, 443]
+  fingerprint:
+    - fingerprints/http/middleware/nginx-detect.yaml
+  checks:
+    safe:
+      - http/exposures/directory-listing.yaml
+    optional: []
+  tags: [middleware, web]
+
+apache:
+  ports: [80, 443]
+  fingerprint:
+    - fingerprints/http/middleware/apache-detect.yaml
+  checks:
+    safe:
+      - http/exposures/apache-server-status-exposed.yaml
+      - http/exposures/directory-listing.yaml
+    optional: []
+  tags: [middleware, web]
+
+redis:
+  ports: [6379]
+  fingerprint:
+    - fingerprints/network/redis-detect.yaml
+  checks:
+    safe:
+      - network/no-auth/redis-no-auth.yaml
+    optional: []
+  tags: [database, cache]
+
+mysql:
+  ports: [3306]
+  fingerprint:
+    - fingerprints/network/mysql-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [database]
+
+postgres:
+  ports: [5432]
+  fingerprint:
+    - fingerprints/network/postgres-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [database]
+
+mssql:
+  ports: [1433]
+  fingerprint:
+    - fingerprints/network/mssql-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [database]
+
+ssh:
+  ports: [22]
+  fingerprint:
+    - fingerprints/network/ssh-detect.yaml
+  checks:
+    safe: []
+    optional:
+      - javascript/default-logins/ssh-mini-brute.yaml
+  tags: [network, protocol]
+
+ftp:
+  ports: [21]
+  fingerprint:
+    - fingerprints/network/ftp-detect.yaml
+  checks:
+    safe:
+      - network/anonymous-access/ftp-anonymous-login.yaml
+    optional:
+      - network/default-logins/ftp-mini-brute.yaml
+  tags: [network, protocol]
+
+smb:
+  ports: [445]
+  fingerprint:
+    - fingerprints/network/smb-detect.yaml
+  checks:
+    safe:
+      - network/misconfig/smb-null-session.yaml
+    optional: []
+  tags: [network, protocol]
+
+mongodb:
+  ports: [27017]
+  fingerprint: []
+  checks:
+    safe:
+      - network/no-auth/mongodb-no-auth.yaml
+    optional: []
+  tags: [database]
+
+elasticsearch:
+  ports: [9200]
+  fingerprint: []
+  checks:
+    safe:
+      - network/no-auth/elasticsearch-no-auth.yaml
+    optional: []
+  tags: [database, search]
+
+zookeeper:
+  ports: [2181]
+  fingerprint:
+    - fingerprints/network/zookeeper-detect.yaml
+  checks:
+    safe:
+      - network/no-auth/zookeeper-unauth.yaml
+    optional: []
+  tags: [coordination]
+
+memcached:
+  ports: [11211]
+  fingerprint:
+    - fingerprints/network/memcached-detect.yaml
+  checks:
+    safe:
+      - network/no-auth/memcached-unauth.yaml
+    optional: []
+  tags: [cache]
+
+rsync:
+  ports: [873]
+  fingerprint:
+    - fingerprints/network/rsync-detect.yaml
+  checks:
+    safe:
+      - network/anonymous-access/rsync-anonymous-list.yaml
+    optional: []
+  tags: [network, protocol]
+
+snmp:
+  ports: [161]
+  fingerprint:
+    - fingerprints/network/snmp-detect.yaml
+  checks:
+    safe:
+      - network/misconfig/snmp-public-community.yaml
+    optional: []
+  tags: [network, protocol]
+
+telnet:
+  ports: [23]
+  fingerprint:
+    - fingerprints/network/telnet-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [network, protocol]
+
+rdp:
+  ports: [3389]
+  fingerprint:
+    - fingerprints/network/rdp-detect.yaml
+  checks:
+    safe: []
+    optional: []
+  tags: [network, protocol]
+
+druid:
+  ports: [8080]
+  fingerprint: []
+  checks:
+    safe:
+      - http/exposures/druid-monitor-exposed.yaml
+    optional: []
+  tags: [panels, monitoring, web]
+
+php:
+  ports: [80, 443]
+  fingerprint: []
+  checks:
+    safe:
+      - http/exposures/phpinfo-exposed.yaml
+    optional: []
+  tags: [web]
+
+jolokia:
+  ports: [8080]
+  fingerprint: []
+  checks:
+    safe:
+      - http/exposures/jolokia-exposed.yaml
+    optional: []
+  tags: [middleware, web]

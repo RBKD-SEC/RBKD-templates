@@ -1,0 +1,13 @@
+id: web-services
+
+info:
+  name: Web Services Workflow
+  author: internal-audit
+  description: |
+    HTTP service fingerprinting + safe risk detection.
+    Covers middleware, devops platforms, panels, and common web exposures.
+  tags: workflow,internal-audit,web,safe
+
+workflows:
+  - tags: fingerprint,http,internal-audit
+  - tags: safe,http,internal-audit

@@ -1,0 +1,25 @@
+id: redis-detect
+
+info:
+  name: Redis Detect
+  author: internal-audit
+  severity: info
+  description: Detects Redis service via banner.
+  metadata:
+    max-request: 1
+  tags: fingerprint,network,redis,database,internal-audit
+
+tcp:
+  - inputs:
+      - data: "INFO\r\n"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 6379
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "redis_version"
+          - "DENIED"
+        condition: or

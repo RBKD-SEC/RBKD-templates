@@ -1,0 +1,25 @@
+id: memcached-unauth
+
+info:
+  name: Memcached Unauthenticated Access
+  author: internal-audit
+  severity: medium
+  description: Detects Memcached without authentication via stats command (read-only).
+  metadata:
+    max-request: 1
+  tags: network,memcached,no-auth,internal-audit,safe
+
+tcp:
+  - inputs:
+      - data: "stats\n"
+        read: 2048
+    host:
+      - "{{Hostname}}"
+    port: 11211
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "STAT pid"
+          - "STAT uptime"
+        condition: and

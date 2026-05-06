@@ -1,0 +1,25 @@
+# Source: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/technologies/grafana-detect.yaml
+# Modified: 收敛 matcher
+
+id: grafana-detect
+
+info:
+  name: Grafana Detect
+  author: pdteam, internal-audit
+  severity: info
+  description: Detects Grafana monitoring dashboard.
+  metadata:
+    max-request: 1
+  tags: fingerprint,http,grafana,panels,internal-audit
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/login"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Grafana"
+          - "grafana_app"
+        condition: or

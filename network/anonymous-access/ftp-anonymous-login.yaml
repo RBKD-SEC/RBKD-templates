@@ -1,0 +1,25 @@
+id: ftp-anonymous-login
+
+info:
+  name: FTP Anonymous Login
+  author: internal-audit
+  severity: medium
+  description: Detects FTP server allowing anonymous login (read-only LIST probe).
+  metadata:
+    max-request: 2
+  tags: network,ftp,anonymous,internal-audit,safe
+
+tcp:
+  - inputs:
+      - data: "USER anonymous\r\n"
+        read: 1024
+      - data: "PASS anonymous@\r\n"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 21
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "230 Login successful"

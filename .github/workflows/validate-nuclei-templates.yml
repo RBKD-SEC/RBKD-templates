@@ -1,0 +1,26 @@
+name: Validate Nuclei Templates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Nuclei
+        run: |
+          go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+          nuclei -version
+
+      - name: Validate templates
+        run: |
+          nuclei -validate -t .
+
+      - name: Lint IDs and weak-password fields
+        run: |
+          bash scripts/lint-ids.sh

@@ -1,0 +1,25 @@
+# Source: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/misconfiguration/jolokia-list.yaml
+# Modified: 仅保留只读探测路径
+
+id: jolokia-exposed
+
+info:
+  name: Jolokia Exposed
+  author: pdteam, internal-audit
+  severity: medium
+  description: Detects exposed Jolokia JMX agent (read-only version probe).
+  metadata:
+    max-request: 1
+  tags: http,exposure,jolokia,internal-audit,safe
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/jolokia/version"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - '"agent"'
+          - '"jolokia"'
+        condition: and

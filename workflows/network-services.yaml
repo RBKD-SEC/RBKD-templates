@@ -1,0 +1,13 @@
+id: network-services
+
+info:
+  name: Network Services Workflow
+  author: internal-audit
+  description: |
+    Network service fingerprinting + safe risk detection.
+    Covers databases, protocols, and network-level misconfigurations.
+  tags: workflow,internal-audit,network,safe
+
+workflows:
+  - tags: fingerprint,network,internal-audit
+  - tags: safe,network,internal-audit

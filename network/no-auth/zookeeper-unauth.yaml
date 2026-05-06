@@ -1,0 +1,25 @@
+id: zookeeper-unauth
+
+info:
+  name: ZooKeeper Unauthenticated Access
+  author: internal-audit
+  severity: high
+  description: Detects ZooKeeper allowing unauthenticated read access.
+  metadata:
+    max-request: 1
+  tags: network,zookeeper,no-auth,internal-audit,safe
+
+tcp:
+  - inputs:
+      - data: "envi\n"
+        read: 2048
+    host:
+      - "{{Hostname}}"
+    port: 2181
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "zookeeper.version"
+          - "java.version"
+        condition: and

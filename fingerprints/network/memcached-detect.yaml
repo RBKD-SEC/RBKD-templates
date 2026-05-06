@@ -1,0 +1,25 @@
+id: memcached-detect
+
+info:
+  name: Memcached Detect
+  author: internal-audit
+  severity: info
+  description: Detects Memcached service via stats command.
+  metadata:
+    max-request: 1
+  tags: fingerprint,network,memcached,internal-audit
+
+tcp:
+  - inputs:
+      - data: "stats\n"
+        read: 2048
+    host:
+      - "{{Hostname}}"
+    port: 11211
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "STAT pid"
+          - "STAT uptime"
+        condition: and

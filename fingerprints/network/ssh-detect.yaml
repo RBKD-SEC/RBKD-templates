@@ -1,0 +1,24 @@
+id: ssh-detect
+
+info:
+  name: SSH Detect
+  author: internal-audit
+  severity: info
+  description: Detects SSH service via banner.
+  metadata:
+    max-request: 1
+  tags: fingerprint,network,ssh,internal-audit
+
+tcp:
+  - inputs:
+      - data: "\n"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 22
+    matchers:
+      - type: regex
+        part: raw
+        regex:
+          - "^SSH-2\\.0-"
+          - "^SSH-1\\.99-"

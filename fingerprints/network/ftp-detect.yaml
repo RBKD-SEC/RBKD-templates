@@ -1,0 +1,23 @@
+id: ftp-detect
+
+info:
+  name: FTP Detect
+  author: internal-audit
+  severity: info
+  description: Detects FTP service via banner.
+  metadata:
+    max-request: 1
+  tags: fingerprint,network,ftp,internal-audit
+
+tcp:
+  - inputs:
+      - data: "\n"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 21
+    matchers:
+      - type: regex
+        part: raw
+        regex:
+          - "^220 .*(FTP|ftp)"

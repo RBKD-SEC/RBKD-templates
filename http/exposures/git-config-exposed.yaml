@@ -1,0 +1,25 @@
+# Source: https://github.com/projectdiscovery/nuclei-templates/blob/main/http/exposures/configs/git-config.yaml
+# Modified: 仅保留核心路径，只读探测
+
+id: git-config-exposed
+
+info:
+  name: Git Config Exposed
+  author: pdteam, internal-audit
+  severity: medium
+  description: Detects exposed .git/config file.
+  metadata:
+    max-request: 1
+  tags: http,exposure,git,sensitive-files,internal-audit,safe
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.git/config"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "[core]"
+          - "repositoryformatversion"
+        condition: and

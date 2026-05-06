@@ -1,0 +1,23 @@
+id: rsync-detect
+
+info:
+  name: Rsync Detect
+  author: internal-audit
+  severity: info
+  description: Detects Rsync service via banner.
+  metadata:
+    max-request: 1
+  tags: fingerprint,network,rsync,internal-audit
+
+tcp:
+  - inputs:
+      - data: "\n"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 873
+    matchers:
+      - type: regex
+        part: raw
+        regex:
+          - "^@RSYNCD:"

@@ -1,0 +1,23 @@
+id: zookeeper-detect
+
+info:
+  name: ZooKeeper Detect
+  author: internal-audit
+  severity: info
+  description: Detects Apache ZooKeeper service.
+  metadata:
+    max-request: 1
+  tags: fingerprint,network,zookeeper,internal-audit
+
+tcp:
+  - inputs:
+      - data: "ruok\n"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 2181
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "imok"

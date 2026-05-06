@@ -1,0 +1,22 @@
+id: druid-monitor-exposed
+
+info:
+  name: Druid Monitor Exposed
+  author: internal-audit
+  severity: medium
+  description: Detects exposed Alibaba Druid monitor page.
+  metadata:
+    max-request: 1
+  tags: http,exposure,druid,panels,internal-audit,safe
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/druid/index.html"
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Druid Monitor"
+          - "druid"
+        condition: and
