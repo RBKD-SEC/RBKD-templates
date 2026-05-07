@@ -15,6 +15,7 @@ jobs:
       - name: Install Nuclei
         run: |
           go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+          export PATH=$PATH:$(go env GOPATH)/bin
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
           nuclei -version
 
