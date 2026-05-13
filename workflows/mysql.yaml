@@ -8,5 +8,5 @@ info:
   tags: workflow,mysql
 
 workflows:
-  - template: network/technologies/mysql-detect.yaml
+  - template: network/detection/mysql-detect.yaml
   - template: network/default-logins/mysql-mini-brute.yaml

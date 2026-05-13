@@ -8,6 +8,6 @@ info:
   tags: workflow,redis
 
 workflows:
-  - template: network/technologies/redis-detect.yaml
+  - template: network/detection/redis-detect.yaml
   - template: network/misconfiguration/redis-no-auth.yaml
   - template: network/default-logins/redis-acl-mini-brute.yaml

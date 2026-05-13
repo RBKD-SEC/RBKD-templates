@@ -8,4 +8,4 @@ info:
   tags: workflow,telnet
 
 workflows:
-  - template: network/technologies/telnet-detect.yaml
+  - template: network/detection/telnet-detect.yaml

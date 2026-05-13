@@ -8,6 +8,6 @@ info:
   tags: workflow,ftp
 
 workflows:
-  - template: network/technologies/ftp-detect.yaml
+  - template: network/detection/ftp-detect.yaml
   - template: network/misconfiguration/ftp-anonymous-login.yaml
   - template: network/default-logins/ftp-mini-brute.yaml
