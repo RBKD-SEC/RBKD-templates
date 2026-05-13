@@ -1,0 +1,12 @@
+id: php
+
+info:
+  name: Php Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for php. Covers: security exposure checks, authentication checks.
+  tags: workflow,php
+
+workflows:
+  - template: http/exposures/phpinfo-exposed.yaml
+  - template: http/default-logins/phpmyadmin-mini-brute.yaml

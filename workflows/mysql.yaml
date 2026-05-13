@@ -1,0 +1,12 @@
+id: mysql
+
+info:
+  name: Mysql Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for mysql. Covers: fingerprint detection, authentication checks.
+  tags: workflow,mysql
+
+workflows:
+  - template: fingerprints/network/mysql-detect.yaml
+  - template: network/default-logins/mysql-mini-brute.yaml

@@ -1,0 +1,11 @@
+id: s7comm
+
+info:
+  name: S7comm Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for s7comm. Covers: fingerprint detection.
+  tags: workflow,s7comm
+
+workflows:
+  - template: fingerprints/network/ics/s7comm-detect.yaml

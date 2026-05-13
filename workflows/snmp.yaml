@@ -1,0 +1,12 @@
+id: snmp
+
+info:
+  name: Snmp Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for snmp. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,snmp
+
+workflows:
+  - template: fingerprints/network/snmp-detect.yaml
+  - template: network/misconfig/snmp-public-community.yaml

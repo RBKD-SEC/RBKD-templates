@@ -1,0 +1,13 @@
+id: redis
+
+info:
+  name: Redis Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for redis. Covers: fingerprint detection, security exposure checks, authentication checks.
+  tags: workflow,redis
+
+workflows:
+  - template: fingerprints/network/redis-detect.yaml
+  - template: network/no-auth/redis-no-auth.yaml
+  - template: network/default-logins/redis-acl-mini-brute.yaml

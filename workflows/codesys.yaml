@@ -1,0 +1,11 @@
+id: codesys
+
+info:
+  name: Codesys Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for codesys. Covers: fingerprint detection.
+  tags: workflow,codesys
+
+workflows:
+  - template: fingerprints/network/ics/codesys-detect.yaml

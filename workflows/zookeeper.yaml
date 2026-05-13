@@ -1,0 +1,12 @@
+id: zookeeper
+
+info:
+  name: Zookeeper Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for zookeeper. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,zookeeper
+
+workflows:
+  - template: fingerprints/network/zookeeper-detect.yaml
+  - template: network/no-auth/zookeeper-unauth.yaml

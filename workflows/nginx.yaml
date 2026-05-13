@@ -1,0 +1,12 @@
+id: nginx
+
+info:
+  name: Nginx Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for nginx. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,nginx
+
+workflows:
+  - template: fingerprints/http/middleware/nginx-detect.yaml
+  - template: http/exposures/directory-listing.yaml

@@ -1,0 +1,11 @@
+id: etcd
+
+info:
+  name: Etcd Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for etcd. Covers: security exposure checks.
+  tags: workflow,etcd
+
+workflows:
+  - template: http/exposures/etcd-unauth.yaml

@@ -1,0 +1,12 @@
+id: ruijie
+
+info:
+  name: Ruijie Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for ruijie. Covers: fingerprint detection, authentication checks.
+  tags: workflow,ruijie
+
+workflows:
+  - template: fingerprints/http/network-devices/ruijie-detect.yaml
+  - template: http/default-logins/ruijie-mini-brute.yaml

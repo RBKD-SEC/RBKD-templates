@@ -1,0 +1,12 @@
+id: abb
+
+info:
+  name: Abb Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for abb. Covers: fingerprint detection, authentication checks.
+  tags: workflow,abb
+
+workflows:
+  - template: fingerprints/http/ics/abb-detect.yaml
+  - template: http/default-logins/abb-mini-brute.yaml

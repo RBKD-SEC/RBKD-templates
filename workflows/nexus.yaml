@@ -1,0 +1,12 @@
+id: nexus
+
+info:
+  name: Nexus Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for nexus. Covers: fingerprint detection, authentication checks.
+  tags: workflow,nexus
+
+workflows:
+  - template: fingerprints/http/devops/nexus-detect.yaml
+  - template: http/default-logins/nexus-mini-brute.yaml

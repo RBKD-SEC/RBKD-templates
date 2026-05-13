@@ -1,0 +1,12 @@
+id: zabbix
+
+info:
+  name: Zabbix Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for zabbix. Covers: fingerprint detection, authentication checks.
+  tags: workflow,zabbix
+
+workflows:
+  - template: fingerprints/http/panels/zabbix-detect.yaml
+  - template: http/default-logins/zabbix-mini-brute.yaml

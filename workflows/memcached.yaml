@@ -1,0 +1,12 @@
+id: memcached
+
+info:
+  name: Memcached Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for memcached. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,memcached
+
+workflows:
+  - template: fingerprints/network/memcached-detect.yaml
+  - template: network/no-auth/memcached-unauth.yaml

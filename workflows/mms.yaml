@@ -1,0 +1,11 @@
+id: mms
+
+info:
+  name: Mms Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for mms. Covers: fingerprint detection.
+  tags: workflow,mms
+
+workflows:
+  - template: fingerprints/network/ics/mms-detect.yaml

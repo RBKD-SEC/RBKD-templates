@@ -1,0 +1,11 @@
+id: kubernetes
+
+info:
+  name: Kubernetes Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for kubernetes. Covers: security exposure checks.
+  tags: workflow,kubernetes
+
+workflows:
+  - template: http/exposures/kubernetes-api-unauth.yaml

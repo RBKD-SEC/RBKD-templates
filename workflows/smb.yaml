@@ -1,0 +1,12 @@
+id: smb
+
+info:
+  name: Smb Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for smb. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,smb
+
+workflows:
+  - template: fingerprints/network/smb-detect.yaml
+  - template: network/misconfig/smb-null-session.yaml

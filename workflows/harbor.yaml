@@ -1,0 +1,12 @@
+id: harbor
+
+info:
+  name: Harbor Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for harbor. Covers: fingerprint detection, authentication checks.
+  tags: workflow,harbor
+
+workflows:
+  - template: fingerprints/http/devops/harbor-detect.yaml
+  - template: http/default-logins/harbor-mini-brute.yaml

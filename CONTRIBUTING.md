@@ -6,7 +6,7 @@
 2. 按照 `TEMPLATE_GUIDE.md` 填写字段。
 3. 本地运行 `nuclei -validate -t <文件>` 确保通过。
 4. 若引用 payload 文件，实测 `nuclei -t .` 与 `nuclei -t workflows/x.yaml` 两种入口路径解析。
-5. 更新 `metadata/service-map.yaml`（如适用）。
+5. 若新增了一个新服务，在 `workflows/` 下创建对应的 `<service>.yaml`，直接 `template:` 引用相关模板。
 6. 提交 PR。
 
 ## PR 要求

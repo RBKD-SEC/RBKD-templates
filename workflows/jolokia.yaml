@@ -1,0 +1,11 @@
+id: jolokia
+
+info:
+  name: Jolokia Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for jolokia. Covers: security exposure checks.
+  tags: workflow,jolokia
+
+workflows:
+  - template: http/exposures/jolokia-exposed.yaml

@@ -1,0 +1,12 @@
+id: minio
+
+info:
+  name: Minio Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for minio. Covers: fingerprint detection, authentication checks.
+  tags: workflow,minio
+
+workflows:
+  - template: fingerprints/http/panels/minio-detect.yaml
+  - template: http/default-logins/minio-mini-brute.yaml

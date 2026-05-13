@@ -1,0 +1,12 @@
+id: ssh
+
+info:
+  name: Ssh Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for ssh. Covers: fingerprint detection, authentication checks.
+  tags: workflow,ssh
+
+workflows:
+  - template: fingerprints/network/ssh-detect.yaml
+  - template: javascript/default-logins/ssh-mini-brute.yaml

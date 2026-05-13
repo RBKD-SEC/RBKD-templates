@@ -1,0 +1,13 @@
+id: jenkins
+
+info:
+  name: Jenkins Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for jenkins. Covers: fingerprint detection, security exposure checks, authentication checks.
+  tags: workflow,jenkins
+
+workflows:
+  - template: fingerprints/http/devops/jenkins-detect.yaml
+  - template: http/exposures/swagger-ui-exposed.yaml
+  - template: http/default-logins/jenkins-mini-brute.yaml

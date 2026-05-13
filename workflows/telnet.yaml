@@ -1,0 +1,11 @@
+id: telnet
+
+info:
+  name: Telnet Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for telnet. Covers: fingerprint detection.
+  tags: workflow,telnet
+
+workflows:
+  - template: fingerprints/network/telnet-detect.yaml

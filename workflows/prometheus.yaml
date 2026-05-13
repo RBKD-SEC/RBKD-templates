@@ -1,0 +1,12 @@
+id: prometheus
+
+info:
+  name: Prometheus Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for prometheus. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,prometheus
+
+workflows:
+  - template: fingerprints/http/panels/prometheus-detect.yaml
+  - template: http/exposures/prometheus-metrics-exposed.yaml

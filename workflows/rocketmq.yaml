@@ -1,0 +1,12 @@
+id: rocketmq
+
+info:
+  name: Rocketmq Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for rocketmq. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,rocketmq
+
+workflows:
+  - template: fingerprints/http/middleware/rocketmq-detect.yaml
+  - template: http/exposures/rocketmq-console-exposed.yaml

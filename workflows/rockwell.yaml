@@ -1,0 +1,12 @@
+id: rockwell
+
+info:
+  name: Rockwell Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for rockwell. Covers: fingerprint detection, authentication checks.
+  tags: workflow,rockwell
+
+workflows:
+  - template: fingerprints/http/ics/rockwell-detect.yaml
+  - template: http/default-logins/rockwell-mini-brute.yaml

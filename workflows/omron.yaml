@@ -1,0 +1,12 @@
+id: omron
+
+info:
+  name: Omron Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for omron. Covers: fingerprint detection, authentication checks.
+  tags: workflow,omron
+
+workflows:
+  - template: fingerprints/http/ics/omron-detect.yaml
+  - template: http/default-logins/omron-mini-brute.yaml

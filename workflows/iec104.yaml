@@ -1,0 +1,11 @@
+id: iec104
+
+info:
+  name: Iec104 Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for iec104. Covers: fingerprint detection.
+  tags: workflow,iec104
+
+workflows:
+  - template: fingerprints/network/ics/iec104-detect.yaml

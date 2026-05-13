@@ -1,0 +1,13 @@
+id: ftp
+
+info:
+  name: Ftp Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for ftp. Covers: fingerprint detection, security exposure checks, authentication checks.
+  tags: workflow,ftp
+
+workflows:
+  - template: fingerprints/network/ftp-detect.yaml
+  - template: network/anonymous-access/ftp-anonymous-login.yaml
+  - template: network/default-logins/ftp-mini-brute.yaml

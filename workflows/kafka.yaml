@@ -1,0 +1,13 @@
+id: kafka
+
+info:
+  name: Kafka Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for kafka. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,kafka
+
+workflows:
+  - template: fingerprints/http/middleware/kafka-detect.yaml
+  - template: http/exposures/kafka-connect-exposed.yaml
+  - template: network/no-auth/kafka-unauth.yaml

@@ -1,0 +1,11 @@
+id: oscar
+
+info:
+  name: Oscar Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for oscar. Covers: fingerprint detection.
+  tags: workflow,oscar
+
+workflows:
+  - template: fingerprints/network/oscar-detect.yaml

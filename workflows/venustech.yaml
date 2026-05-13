@@ -1,0 +1,12 @@
+id: venustech
+
+info:
+  name: Venustech Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for venustech. Covers: fingerprint detection, authentication checks.
+  tags: workflow,venustech
+
+workflows:
+  - template: fingerprints/http/network-devices/venustech-detect.yaml
+  - template: http/default-logins/venustech-mini-brute.yaml

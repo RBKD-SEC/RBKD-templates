@@ -1,0 +1,11 @@
+id: docker-registry
+
+info:
+  name: Docker Registry Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for docker-registry. Covers: security exposure checks.
+  tags: workflow,docker-registry
+
+workflows:
+  - template: http/exposures/docker-registry-exposed.yaml

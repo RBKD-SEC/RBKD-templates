@@ -1,0 +1,12 @@
+id: huawei
+
+info:
+  name: Huawei Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for huawei. Covers: fingerprint detection, authentication checks.
+  tags: workflow,huawei
+
+workflows:
+  - template: fingerprints/http/network-devices/huawei-detect.yaml
+  - template: http/default-logins/huawei-mini-brute.yaml

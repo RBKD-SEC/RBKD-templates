@@ -1,0 +1,12 @@
+id: bes
+
+info:
+  name: Bes Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for bes. Covers: fingerprint detection, authentication checks.
+  tags: workflow,bes
+
+workflows:
+  - template: fingerprints/http/middleware/bes-detect.yaml
+  - template: http/default-logins/bes-mini-brute.yaml

@@ -1,0 +1,12 @@
+id: kingbase
+
+info:
+  name: Kingbase Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for kingbase. Covers: fingerprint detection, authentication checks.
+  tags: workflow,kingbase
+
+workflows:
+  - template: fingerprints/network/kingbase-detect.yaml
+  - template: network/default-logins/kingbase-mini-brute.yaml

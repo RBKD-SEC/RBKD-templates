@@ -1,0 +1,12 @@
+id: grafana
+
+info:
+  name: Grafana Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for grafana. Covers: fingerprint detection, authentication checks.
+  tags: workflow,grafana
+
+workflows:
+  - template: fingerprints/http/panels/grafana-detect.yaml
+  - template: http/default-logins/grafana-mini-brute.yaml

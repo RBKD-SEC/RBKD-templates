@@ -1,0 +1,11 @@
+id: consul
+
+info:
+  name: Consul Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for consul. Covers: security exposure checks.
+  tags: workflow,consul
+
+workflows:
+  - template: http/exposures/consul-unauth.yaml

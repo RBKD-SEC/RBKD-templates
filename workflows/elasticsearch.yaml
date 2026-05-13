@@ -1,0 +1,11 @@
+id: elasticsearch
+
+info:
+  name: Elasticsearch Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for elasticsearch. Covers: security exposure checks.
+  tags: workflow,elasticsearch
+
+workflows:
+  - template: network/no-auth/elasticsearch-no-auth.yaml

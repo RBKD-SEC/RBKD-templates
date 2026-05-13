@@ -1,0 +1,12 @@
+id: weblogic
+
+info:
+  name: Weblogic Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for weblogic. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,weblogic
+
+workflows:
+  - template: fingerprints/http/middleware/weblogic-detect.yaml
+  - template: http/exposures/weblogic-console-exposed.yaml

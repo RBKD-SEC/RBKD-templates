@@ -1,0 +1,12 @@
+id: jboss
+
+info:
+  name: Jboss Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for jboss. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,jboss
+
+workflows:
+  - template: fingerprints/http/middleware/jboss-detect.yaml
+  - template: http/exposures/jboss-jmx-console-exposed.yaml

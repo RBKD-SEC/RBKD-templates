@@ -1,0 +1,12 @@
+id: siemens
+
+info:
+  name: Siemens Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for siemens. Covers: fingerprint detection, authentication checks.
+  tags: workflow,siemens
+
+workflows:
+  - template: fingerprints/http/ics/siemens-detect.yaml
+  - template: http/default-logins/siemens-mini-brute.yaml

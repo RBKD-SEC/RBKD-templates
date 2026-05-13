@@ -1,0 +1,13 @@
+id: tomcat
+
+info:
+  name: Tomcat Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for tomcat. Covers: fingerprint detection, security exposure checks, authentication checks.
+  tags: workflow,tomcat
+
+workflows:
+  - template: fingerprints/http/middleware/tomcat-detect.yaml
+  - template: http/exposures/git-config-exposed.yaml
+  - template: http/default-logins/tomcat-manager-mini-brute.yaml

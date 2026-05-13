@@ -1,0 +1,11 @@
+id: dnp3
+
+info:
+  name: Dnp3 Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for dnp3. Covers: fingerprint detection.
+  tags: workflow,dnp3
+
+workflows:
+  - template: fingerprints/network/ics/dnp3-detect.yaml

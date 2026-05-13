@@ -1,0 +1,11 @@
+id: rdp
+
+info:
+  name: Rdp Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for rdp. Covers: fingerprint detection.
+  tags: workflow,rdp
+
+workflows:
+  - template: fingerprints/network/rdp-detect.yaml

@@ -1,0 +1,13 @@
+id: apache
+
+info:
+  name: Apache Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for apache. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,apache
+
+workflows:
+  - template: fingerprints/http/middleware/apache-detect.yaml
+  - template: http/exposures/apache-server-status-exposed.yaml
+  - template: http/exposures/directory-listing.yaml

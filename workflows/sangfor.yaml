@@ -1,0 +1,12 @@
+id: sangfor
+
+info:
+  name: Sangfor Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for sangfor. Covers: fingerprint detection, authentication checks.
+  tags: workflow,sangfor
+
+workflows:
+  - template: fingerprints/http/network-devices/sangfor-detect.yaml
+  - template: http/default-logins/sangfor-mini-brute.yaml

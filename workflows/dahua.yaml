@@ -1,0 +1,12 @@
+id: dahua
+
+info:
+  name: Dahua Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for dahua. Covers: fingerprint detection, authentication checks.
+  tags: workflow,dahua
+
+workflows:
+  - template: fingerprints/http/cameras/dahua-detect.yaml
+  - template: http/default-logins/dahua-mini-brute.yaml

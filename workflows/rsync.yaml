@@ -1,0 +1,12 @@
+id: rsync
+
+info:
+  name: Rsync Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for rsync. Covers: fingerprint detection, security exposure checks.
+  tags: workflow,rsync
+
+workflows:
+  - template: fingerprints/network/rsync-detect.yaml
+  - template: network/anonymous-access/rsync-anonymous-list.yaml

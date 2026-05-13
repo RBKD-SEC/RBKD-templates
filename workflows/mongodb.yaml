@@ -1,0 +1,11 @@
+id: mongodb
+
+info:
+  name: Mongodb Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for mongodb. Covers: security exposure checks.
+  tags: workflow,mongodb
+
+workflows:
+  - template: network/no-auth/mongodb-no-auth.yaml

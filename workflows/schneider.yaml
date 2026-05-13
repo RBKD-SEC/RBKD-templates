@@ -1,0 +1,12 @@
+id: schneider
+
+info:
+  name: Schneider Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for schneider. Covers: fingerprint detection, authentication checks.
+  tags: workflow,schneider
+
+workflows:
+  - template: fingerprints/http/ics/schneider-detect.yaml
+  - template: http/default-logins/schneider-mini-brute.yaml

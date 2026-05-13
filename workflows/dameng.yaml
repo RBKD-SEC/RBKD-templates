@@ -1,0 +1,11 @@
+id: dameng
+
+info:
+  name: Dameng Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for dameng. Covers: fingerprint detection.
+  tags: workflow,dameng
+
+workflows:
+  - template: fingerprints/network/dameng-detect.yaml

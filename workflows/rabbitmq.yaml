@@ -1,0 +1,11 @@
+id: rabbitmq
+
+info:
+  name: Rabbitmq Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for rabbitmq. Covers: authentication checks.
+  tags: workflow,rabbitmq
+
+workflows:
+  - template: http/default-logins/rabbitmq-mini-brute.yaml

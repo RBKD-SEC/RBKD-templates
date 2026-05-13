@@ -1,0 +1,12 @@
+id: hikvision
+
+info:
+  name: Hikvision Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for hikvision. Covers: fingerprint detection, authentication checks.
+  tags: workflow,hikvision
+
+workflows:
+  - template: fingerprints/http/cameras/hikvision-detect.yaml
+  - template: http/default-logins/hikvision-mini-brute.yaml

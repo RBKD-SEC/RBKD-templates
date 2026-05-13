@@ -1,0 +1,11 @@
+id: activemq
+
+info:
+  name: Activemq Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for activemq. Covers: authentication checks.
+  tags: workflow,activemq
+
+workflows:
+  - template: http/default-logins/activemq-mini-brute.yaml

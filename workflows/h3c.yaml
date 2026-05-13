@@ -1,0 +1,12 @@
+id: h3c
+
+info:
+  name: H3c Scan
+  author: internal-audit
+  description: |
+    Service-specific scan for h3c. Covers: fingerprint detection, authentication checks.
+  tags: workflow,h3c
+
+workflows:
+  - template: fingerprints/http/network-devices/h3c-detect.yaml
+  - template: http/default-logins/h3c-mini-brute.yaml
