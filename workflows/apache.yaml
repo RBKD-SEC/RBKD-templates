@@ -8,6 +8,6 @@ info:
   tags: workflow,apache
 
 workflows:
-  - template: RBKD-templates/http/technologies/apache-detect.yaml
+  - template: http/technologies/apache/apache-detect.yaml
   - template: RBKD-templates/http/exposures/apache-server-status-exposed.yaml
-  - template: RBKD-templates/http/exposures/directory-listing.yaml
+  - template: http/miscellaneous/directory-listing.yaml

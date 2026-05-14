@@ -9,4 +9,4 @@ info:
 
 workflows:
   - template: RBKD-templates/http/technologies/nginx-detect.yaml
-  - template: RBKD-templates/http/exposures/directory-listing.yaml
+  - template: http/miscellaneous/directory-listing.yaml
