@@ -8,5 +8,5 @@ info:
   tags: workflow,schneider
 
 workflows:
-  - template: http/technologies/schneider-detect.yaml
-  - template: http/default-logins/schneider-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/schneider-detect.yaml
+  - template: RBKD-templates/http/default-logins/schneider-mini-brute.yaml

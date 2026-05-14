@@ -8,4 +8,4 @@ info:
   tags: workflow,docker-api
 
 workflows:
-  - template: http/exposures/docker-api-unauth.yaml
+  - template: RBKD-templates/http/exposures/docker-api-unauth.yaml

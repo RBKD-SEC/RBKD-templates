@@ -8,4 +8,4 @@ info:
   tags: workflow,docker-registry
 
 workflows:
-  - template: http/exposures/docker-registry-exposed.yaml
+  - template: RBKD-templates/http/exposures/docker-registry-exposed.yaml

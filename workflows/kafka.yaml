@@ -8,6 +8,6 @@ info:
   tags: workflow,kafka
 
 workflows:
-  - template: http/technologies/kafka-detect.yaml
-  - template: http/exposures/kafka-connect-exposed.yaml
-  - template: network/misconfig/kafka-unauth.yaml
+  - template: RBKD-templates/http/technologies/kafka-detect.yaml
+  - template: RBKD-templates/http/exposures/kafka-connect-exposed.yaml
+  - template: RBKD-templates/network/misconfig/kafka-unauth.yaml

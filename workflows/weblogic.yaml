@@ -9,4 +9,4 @@ info:
 
 workflows:
   - template: http/technologies/weblogic-detect.yaml
-  - template: http/exposures/weblogic-console-exposed.yaml
+  - template: RBKD-templates/http/exposures/weblogic-console-exposed.yaml

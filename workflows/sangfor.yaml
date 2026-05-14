@@ -8,5 +8,5 @@ info:
   tags: workflow,sangfor
 
 workflows:
-  - template: http/technologies/sangfor-detect.yaml
-  - template: http/default-logins/sangfor-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/sangfor-detect.yaml
+  - template: RBKD-templates/http/default-logins/sangfor-mini-brute.yaml

@@ -8,4 +8,4 @@ info:
   tags: workflow,kubernetes
 
 workflows:
-  - template: http/exposures/kubernetes-api-unauth.yaml
+  - template: RBKD-templates/http/exposures/kubernetes-api-unauth.yaml

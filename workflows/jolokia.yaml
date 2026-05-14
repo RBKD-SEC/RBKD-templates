@@ -8,4 +8,4 @@ info:
   tags: workflow,jolokia
 
 workflows:
-  - template: http/exposures/jolokia-exposed.yaml
+  - template: RBKD-templates/http/exposures/jolokia-exposed.yaml

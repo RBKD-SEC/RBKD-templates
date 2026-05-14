@@ -8,4 +8,4 @@ info:
   tags: workflow,consul
 
 workflows:
-  - template: http/exposures/consul-unauth.yaml
+  - template: RBKD-templates/http/exposures/consul-unauth.yaml

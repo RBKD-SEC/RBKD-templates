@@ -8,5 +8,5 @@ info:
   tags: workflow,ge
 
 workflows:
-  - template: http/technologies/ge-detect.yaml
-  - template: http/default-logins/ge-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/ge-detect.yaml
+  - template: RBKD-templates/http/default-logins/ge-mini-brute.yaml

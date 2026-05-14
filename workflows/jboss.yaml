@@ -9,4 +9,4 @@ info:
 
 workflows:
   - template: http/technologies/jboss-detect.yaml
-  - template: http/exposures/jboss-jmx-console-exposed.yaml
+  - template: RBKD-templates/http/exposures/jboss-jmx-console-exposed.yaml

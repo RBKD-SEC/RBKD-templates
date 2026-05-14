@@ -8,4 +8,4 @@ info:
   tags: workflow,iec104
 
 workflows:
-  - template: network/detection/iec104-detect.yaml
+  - template: RBKD-templates/network/detection/iec104-detect.yaml

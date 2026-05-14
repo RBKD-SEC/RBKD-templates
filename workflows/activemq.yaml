@@ -8,4 +8,4 @@ info:
   tags: workflow,activemq
 
 workflows:
-  - template: http/default-logins/activemq-mini-brute.yaml
+  - template: RBKD-templates/http/default-logins/activemq-mini-brute.yaml

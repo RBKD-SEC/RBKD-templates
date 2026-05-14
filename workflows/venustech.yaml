@@ -8,5 +8,5 @@ info:
   tags: workflow,venustech
 
 workflows:
-  - template: http/technologies/venustech-detect.yaml
-  - template: http/default-logins/venustech-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/venustech-detect.yaml
+  - template: RBKD-templates/http/default-logins/venustech-mini-brute.yaml

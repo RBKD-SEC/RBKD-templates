@@ -8,5 +8,5 @@ info:
   tags: workflow,h3c
 
 workflows:
-  - template: http/technologies/h3c-detect.yaml
-  - template: http/default-logins/h3c-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/h3c-detect.yaml
+  - template: RBKD-templates/http/default-logins/h3c-mini-brute.yaml

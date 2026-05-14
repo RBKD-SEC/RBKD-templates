@@ -1,6 +1,29 @@
-# Nuclei Custom Templates
+# RBKD Nuclei Templates
 
-本仓库存放团队自定义的 Nuclei YAML 模板，用于**内网安全风险发现**。
+本仓库为 RBKD-SEC 团队自定义的 Nuclei 模板集合，用于**内网安全风险发现**。
+
+仓库地址：https://github.com/RBKD-SEC/RBKD-templates
+
+## 使用方式
+
+将本仓库克隆到官方 nuclei-templates 同级目录：
+
+```bash
+cd nuclei-templates
+git clone https://github.com/RBKD-SEC/RBKD-templates
+```
+
+最终目录结构：
+```text
+nuclei-templates/              # 官方模板
+├── http/
+├── network/
+└── workflows/
+└── RBKD-templates/            # 本仓库（自定义模板）
+    ├── http/
+    ├── network/
+    └── workflows/
+```
 
 核心模式：**先用 nmap / httpx 识别服务，再按服务名精准调用对应 workflow**。
 
@@ -40,19 +63,22 @@
 ## 快速开始
 
 ```bash
+# 从官方 nuclei-templates 目录运行
+cd nuclei-templates
+
 # 服务识别
 nmap -sV -p 1-65535 targets.txt -oA nmap-results
 httpx -l web-targets.txt -o httpx-results.json -j
 
-# 按服务名调用对应 workflow
-nuclei -l tomcat-targets.txt -t workflows/tomcat.yaml -rlm 30 -j -o results/tomcat.json
-nuclei -l redis-targets.txt -t workflows/redis.yaml -rlm 30 -j -o results/redis.json
+# 按服务名调用对应 workflow（RBKD-templates 为本仓库）
+nuclei -l tomcat-targets.txt -t RBKD-templates/workflows/tomcat.yaml -rlm 30 -j -o results/tomcat.json
+nuclei -l redis-targets.txt -t RBKD-templates/workflows/redis.yaml -rlm 30 -j -o results/redis.json
 
 # ICS/SCADA 专项（单线程，低速率）
-nuclei -l ics-targets.txt -t workflows/s7comm.yaml -c 1 -rlm 10 -j -o results/s7comm.json
+nuclei -l ics-targets.txt -t RBKD-templates/workflows/s7comm.yaml -c 1 -rlm 10 -j -o results/s7comm.json
 
 # 验证全部模板语法
-nuclei -validate -t .
+nuclei -validate -t RBKD-templates
 ```
 
 ## 参考

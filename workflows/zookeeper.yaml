@@ -8,5 +8,5 @@ info:
   tags: workflow,zookeeper
 
 workflows:
-  - template: network/detection/zookeeper-detect.yaml
-  - template: network/misconfig/zookeeper-unauth.yaml
+  - template: RBKD-templates/network/detection/zookeeper-detect.yaml
+  - template: RBKD-templates/network/misconfig/zookeeper-unauth.yaml

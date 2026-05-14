@@ -8,4 +8,4 @@ info:
   tags: workflow,mms
 
 workflows:
-  - template: network/detection/mms-detect.yaml
+  - template: RBKD-templates/network/detection/mms-detect.yaml

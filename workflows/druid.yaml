@@ -8,4 +8,4 @@ info:
   tags: workflow,druid
 
 workflows:
-  - template: http/exposures/druid-monitor-exposed.yaml
+  - template: RBKD-templates/http/exposures/druid-monitor-exposed.yaml

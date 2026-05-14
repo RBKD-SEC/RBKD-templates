@@ -8,5 +8,5 @@ info:
   tags: workflow,siemens
 
 workflows:
-  - template: http/technologies/siemens-detect.yaml
-  - template: http/default-logins/siemens-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/siemens-detect.yaml
+  - template: RBKD-templates/http/default-logins/siemens-mini-brute.yaml

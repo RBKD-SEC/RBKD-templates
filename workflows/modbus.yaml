@@ -8,4 +8,4 @@ info:
   tags: workflow,modbus
 
 workflows:
-  - template: network/detection/modbus-detect.yaml
+  - template: RBKD-templates/network/detection/modbus-detect.yaml

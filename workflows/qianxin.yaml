@@ -8,5 +8,5 @@ info:
   tags: workflow,qianxin
 
 workflows:
-  - template: http/technologies/qianxin-detect.yaml
-  - template: http/default-logins/qianxin-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/qianxin-detect.yaml
+  - template: RBKD-templates/http/default-logins/qianxin-mini-brute.yaml

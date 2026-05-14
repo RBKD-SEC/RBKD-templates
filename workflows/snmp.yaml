@@ -8,5 +8,5 @@ info:
   tags: workflow,snmp
 
 workflows:
-  - template: network/detection/snmp-detect.yaml
-  - template: network/misconfig/snmp-public-community.yaml
+  - template: RBKD-templates/network/detection/snmp-detect.yaml
+  - template: RBKD-templates/network/misconfig/snmp-public-community.yaml

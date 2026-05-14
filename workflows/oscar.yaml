@@ -8,4 +8,4 @@ info:
   tags: workflow,oscar
 
 workflows:
-  - template: network/detection/oscar-detect.yaml
+  - template: RBKD-templates/network/detection/oscar-detect.yaml

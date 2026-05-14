@@ -8,4 +8,4 @@ info:
   tags: workflow,elasticsearch
 
 workflows:
-  - template: network/misconfig/elasticsearch-no-auth.yaml
+  - template: RBKD-templates/network/misconfig/elasticsearch-no-auth.yaml

@@ -8,5 +8,5 @@ info:
   tags: workflow,huawei
 
 workflows:
-  - template: http/technologies/huawei-detect.yaml
-  - template: http/default-logins/huawei-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/huawei-detect.yaml
+  - template: RBKD-templates/http/default-logins/huawei-mini-brute.yaml

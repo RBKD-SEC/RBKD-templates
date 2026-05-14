@@ -8,4 +8,4 @@ info:
   tags: workflow,kibana
 
 workflows:
-  - template: http/technologies/kibana-detect.yaml
+  - template: RBKD-templates/http/technologies/kibana-detect.yaml

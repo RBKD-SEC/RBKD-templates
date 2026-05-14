@@ -8,5 +8,5 @@ info:
   tags: workflow,bes
 
 workflows:
-  - template: http/technologies/bes-detect.yaml
-  - template: http/default-logins/bes-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/bes-detect.yaml
+  - template: RBKD-templates/http/default-logins/bes-mini-brute.yaml

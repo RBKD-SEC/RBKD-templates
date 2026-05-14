@@ -8,5 +8,5 @@ info:
   tags: workflow,prometheus
 
 workflows:
-  - template: http/technologies/prometheus-detect.yaml
-  - template: http/exposures/prometheus-metrics-exposed.yaml
+  - template: RBKD-templates/http/technologies/prometheus-detect.yaml
+  - template: RBKD-templates/http/exposures/prometheus-metrics-exposed.yaml

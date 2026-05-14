@@ -8,4 +8,4 @@ info:
   tags: workflow,mongodb
 
 workflows:
-  - template: network/misconfig/mongodb-no-auth.yaml
+  - template: RBKD-templates/network/misconfig/mongodb-no-auth.yaml

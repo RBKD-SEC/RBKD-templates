@@ -8,5 +8,5 @@ info:
   tags: workflow,abb
 
 workflows:
-  - template: http/technologies/abb-detect.yaml
-  - template: http/default-logins/abb-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/abb-detect.yaml
+  - template: RBKD-templates/http/default-logins/abb-mini-brute.yaml

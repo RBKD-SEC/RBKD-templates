@@ -8,4 +8,4 @@ info:
   tags: workflow,rdp
 
 workflows:
-  - template: network/detection/rdp-detect.yaml
+  - template: RBKD-templates/network/detection/rdp-detect.yaml

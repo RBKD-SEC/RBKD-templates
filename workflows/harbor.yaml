@@ -9,4 +9,4 @@ info:
 
 workflows:
   - template: http/technologies/harbor-detect.yaml
-  - template: http/default-logins/harbor-mini-brute.yaml
+  - template: RBKD-templates/http/default-logins/harbor-mini-brute.yaml

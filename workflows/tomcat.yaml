@@ -8,6 +8,6 @@ info:
   tags: workflow,tomcat
 
 workflows:
-  - template: http/technologies/tomcat-detect.yaml
-  - template: http/exposures/git-config-exposed.yaml
-  - template: http/default-logins/tomcat-manager-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/tomcat-detect.yaml
+  - template: RBKD-templates/http/exposures/git-config-exposed.yaml
+  - template: RBKD-templates/http/default-logins/tomcat-manager-mini-brute.yaml

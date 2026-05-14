@@ -9,4 +9,4 @@ info:
 
 workflows:
   - template: http/technologies/nexus-detect.yaml
-  - template: http/default-logins/nexus-mini-brute.yaml
+  - template: RBKD-templates/http/default-logins/nexus-mini-brute.yaml

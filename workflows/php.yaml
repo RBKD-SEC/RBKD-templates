@@ -8,5 +8,5 @@ info:
   tags: workflow,php
 
 workflows:
-  - template: http/exposures/phpinfo-exposed.yaml
-  - template: http/default-logins/phpmyadmin-mini-brute.yaml
+  - template: RBKD-templates/http/exposures/phpinfo-exposed.yaml
+  - template: RBKD-templates/http/default-logins/phpmyadmin-mini-brute.yaml

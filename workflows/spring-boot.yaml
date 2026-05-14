@@ -8,6 +8,6 @@ info:
   tags: workflow,spring-boot
 
 workflows:
-  - template: http/technologies/spring-boot-detect.yaml
-  - template: http/exposures/spring-boot-actuator-exposed.yaml
-  - template: http/exposures/swagger-ui-exposed.yaml
+  - template: RBKD-templates/http/technologies/spring-boot-detect.yaml
+  - template: RBKD-templates/http/exposures/spring-boot-actuator-exposed.yaml
+  - template: RBKD-templates/http/exposures/swagger-ui-exposed.yaml

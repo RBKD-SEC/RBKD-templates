@@ -8,5 +8,5 @@ info:
   tags: workflow,tongweb
 
 workflows:
-  - template: http/technologies/tongweb-detect.yaml
-  - template: http/default-logins/tongweb-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/tongweb-detect.yaml
+  - template: RBKD-templates/http/default-logins/tongweb-mini-brute.yaml

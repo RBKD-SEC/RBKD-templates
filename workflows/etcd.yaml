@@ -8,4 +8,4 @@ info:
   tags: workflow,etcd
 
 workflows:
-  - template: http/exposures/etcd-unauth.yaml
+  - template: RBKD-templates/http/exposures/etcd-unauth.yaml

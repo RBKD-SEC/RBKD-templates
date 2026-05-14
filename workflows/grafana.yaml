@@ -8,5 +8,5 @@ info:
   tags: workflow,grafana
 
 workflows:
-  - template: http/technologies/grafana-detect.yaml
-  - template: http/default-logins/grafana-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/grafana-detect.yaml
+  - template: RBKD-templates/http/default-logins/grafana-mini-brute.yaml

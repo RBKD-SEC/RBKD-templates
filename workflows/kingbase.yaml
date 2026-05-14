@@ -8,5 +8,5 @@ info:
   tags: workflow,kingbase
 
 workflows:
-  - template: network/detection/kingbase-detect.yaml
-  - template: network/default-login/kingbase-mini-brute.yaml
+  - template: RBKD-templates/network/detection/kingbase-detect.yaml
+  - template: RBKD-templates/network/default-login/kingbase-mini-brute.yaml

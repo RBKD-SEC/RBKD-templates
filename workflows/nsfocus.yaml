@@ -8,5 +8,5 @@ info:
   tags: workflow,nsfocus
 
 workflows:
-  - template: http/technologies/nsfocus-detect.yaml
-  - template: http/default-logins/nsfocus-mini-brute.yaml
+  - template: RBKD-templates/http/technologies/nsfocus-detect.yaml
+  - template: RBKD-templates/http/default-logins/nsfocus-mini-brute.yaml

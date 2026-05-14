@@ -8,4 +8,4 @@ info:
   tags: workflow,s7comm
 
 workflows:
-  - template: network/detection/s7comm-detect.yaml
+  - template: RBKD-templates/network/detection/s7comm-detect.yaml
