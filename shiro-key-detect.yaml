@@ -1,0 +1,37 @@
+id: shiro-key-bruteforce
+
+info:
+  name: Apache Shiro RememberMe Key Detection
+  author: custom
+  severity: high
+  description: |
+    Detects Apache Shiro rememberMe key via pre-computed AES-CBC payloads.
+    A missing deleteMe in response indicates the key was accepted.
+  reference:
+    - https://issues.apache.org/jira/browse/SHIRO-550
+
+http:
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        Cookie: rememberMe={{payload}}
+
+    attack: pitchfork
+    payloads:
+      key: shiro_keys.txt
+      payload: helpers/wordlists/shiro_rememberme_payloads.txt
+
+    stop-at-first-match: true
+
+    matchers:
+      - type: word
+        part: header
+        negative: true
+        words:
+          - "rememberMe=deleteMe"
+
+    extractors:
+      - type: dsl
+        dsl:
+          - '"Shiro Key: " + key'
