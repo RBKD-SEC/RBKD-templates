@@ -1,0 +1,42 @@
+id: network-device-mini-brute
+
+info:
+  name: Network Device HTTP Mini Brute - 2x2 Dictionary
+  author: penetration-team
+  severity: high
+  description: |
+    Detects weak/default network device (switch/router/firewall) HTTP credentials
+    using a minimal 2-user x 2-password dictionary.
+    MAX 4 ATTEMPTS. Stops at first match.
+  metadata:
+    max-request: 4
+  tags: http,default-login,network-device,internal-audit
+
+http:
+  - raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username+":"+password)}}
+
+    attack: pitchfork
+    stop-at-first-match: true
+    payloads:
+      username:
+        - admin
+        - user
+      password:
+        - admin
+        - admin123
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: dsl
+        dsl:
+          - "!contains(tolower(body), 'invalid')"
+          - "!contains(tolower(body), 'authentication')"
+          - "!contains(tolower(body), 'unauthorized')"
+          - "!contains(tolower(body), 'login')"
+        condition: and

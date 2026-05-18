@@ -1,0 +1,45 @@
+id: ssh-mini-brute
+
+info:
+  name: SSH Mini Brute - 2x2 Dictionary
+  author: penetration-team
+  severity: high
+  description: |
+    Detects weak/default SSH credentials using a minimal 2-user x 2-password dictionary.
+    Designed for internal network penetration testing with minimal account lockout risk.
+    MAX 4 ATTEMPTS. Stops at first match.
+  metadata:
+    max-request: 4
+  tags: js,ssh,default-login,network,internal-audit
+
+javascript:
+  - pre-condition: |
+      var m = require("nuclei/ssh");
+      var c = m.SSHClient();
+      var response = c.ConnectSSHInfoMode(Host, Port);
+      response["UserAuth"].includes("password")
+    code: |
+      var m = require("nuclei/ssh");
+      var c = m.SSHClient();
+      c.Connect(Host,Port,Username,Password);
+    args:
+      Host: "{{Host}}"
+      Port: "22"
+      Username: "{{usernames}}"
+      Password: "{{passwords}}"
+    threads: 1
+    attack: pitchfork
+    stop-at-first-match: true
+    payloads:
+      usernames:
+        - root
+        - admin
+      passwords:
+        - root
+        - admin123
+    matchers:
+      - type: dsl
+        dsl:
+          - "response == true"
+          - "success == true"
+        condition: and

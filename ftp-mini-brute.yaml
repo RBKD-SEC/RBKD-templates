@@ -1,0 +1,36 @@
+id: ftp-mini-brute
+
+info:
+  name: FTP Mini Brute - 2x2 Dictionary
+  author: penetration-team
+  severity: high
+  description: |
+    Detects weak/default FTP credentials using a minimal 2-user x 2-password dictionary.
+    MAX 4 ATTEMPTS. Stops at first match.
+  metadata:
+    max-request: 4
+  tags: network,ftp,default-login,service,tcp,internal-audit
+
+tcp:
+  - inputs:
+      - data: "USER {{username}}\r\n"
+        read: 1024
+      - data: "PASS {{password}}\r\n"
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 21
+    attack: pitchfork
+    stop-at-first-match: true
+    payloads:
+      username:
+        - ftp
+        - admin
+      password:
+        - ftp
+        - admin123
+    matchers:
+      - type: word
+        part: raw
+        words:
+          - "230 Login successful"
