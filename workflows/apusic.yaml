@@ -9,4 +9,3 @@ info:
 
 workflows:
   - template: RBKD-templates/http/technologies/apusic-detect.yaml
-  - template: RBKD-templates/http/default-logins/apusic-mini-brute.yaml

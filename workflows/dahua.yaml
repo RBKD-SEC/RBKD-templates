@@ -9,4 +9,3 @@ info:
 
 workflows:
   - template: RBKD-templates/http/technologies/dahua-detect.yaml
-  - template: RBKD-templates/http/default-logins/dahua-mini-brute.yaml

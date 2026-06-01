@@ -9,4 +9,3 @@ info:
 
 workflows:
   - template: javascript/detection/mssql-detect.yaml
-  - template: RBKD-templates/network/default-login/mssql-mini-brute.yaml

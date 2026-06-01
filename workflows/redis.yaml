@@ -10,4 +10,3 @@ info:
 workflows:
   - template: network/detection/redis-detect.yaml
   - template: RBKD-templates/network/misconfig/redis-no-auth.yaml
-  - template: RBKD-templates/network/default-logins/redis-acl-mini-brute.yaml

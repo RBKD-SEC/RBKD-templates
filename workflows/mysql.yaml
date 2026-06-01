@@ -9,4 +9,3 @@ info:
 
 workflows:
   - template: network/detection/mysql-detect.yaml
-  - template: RBKD-templates/network/default-login/mysql-mini-brute.yaml

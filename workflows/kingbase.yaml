@@ -9,4 +9,3 @@ info:
 
 workflows:
   - template: RBKD-templates/network/detection/kingbase-detect.yaml
-  - template: RBKD-templates/network/default-login/kingbase-mini-brute.yaml

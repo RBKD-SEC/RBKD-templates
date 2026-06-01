@@ -9,4 +9,3 @@ info:
 
 workflows:
   - template: http/exposed-panels/grafana-detect.yaml
-  - template: RBKD-templates/http/default-logins/grafana-mini-brute.yaml

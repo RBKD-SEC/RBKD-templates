@@ -10,4 +10,4 @@ info:
 workflows:
   - template: network/detection/ftp-detect.yaml
   - template: network/default-login/ftp-anonymous-login.yaml
-  - template: RBKD-templates/network/default-login/ftp-mini-brute.yaml
+  - template: RBKD-templates/network/default-logins/ftp-mini-brute.yaml
