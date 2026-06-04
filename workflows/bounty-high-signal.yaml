@@ -1,0 +1,26 @@
+id: bounty-high-signal
+
+info:
+  name: Bounty High-Signal Scan
+  author: anchor
+  description: |
+    High-signal workflow for SRC bounty programs.
+    Only includes templates with high confidence and low noise.
+    Use with src_low_noise scan mode for best results.
+  tags: workflow,bounty,high-signal,src
+
+workflows:
+  # Exposed configurations and APIs
+  - template: RBKD-templates/http/exposures/spring-boot-actuator-exposed.yaml
+  - template: RBKD-templates/http/exposures/swagger-ui-exposed.yaml
+  - template: RBKD-templates/http/exposures/git-config-exposed.yaml
+  - template: RBKD-templates/http/exposures/docker-api-unauth.yaml
+  - template: RBKD-templates/http/exposures/docker-registry-exposed.yaml
+  - template: RBKD-templates/http/exposures/kubernetes-api-unauth.yaml
+  - template: RBKD-templates/http/exposures/etcd-unauth.yaml
+  - template: RBKD-templates/http/exposures/consul-unauth.yaml
+  - template: RBKD-templates/http/exposures/jolokia-exposed.yaml
+  - template: RBKD-templates/http/exposures/prometheus-metrics-exposed.yaml
+
+  # Technology detection (for fingerprinting)
+  - template: RBKD-templates/http/technologies/spring-boot-detect.yaml
