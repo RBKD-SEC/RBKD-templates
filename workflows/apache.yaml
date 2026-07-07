@@ -9,5 +9,6 @@ info:
 
 workflows:
   - template: http/technologies/apache/apache-detect.yaml
-  - template: RBKD-templates/http/exposures/apache-server-status-exposed.yaml
-  - template: http/miscellaneous/directory-listing.yaml
+    subtemplates:
+      - template: http/misconfiguration/apache/apache-server-status.yaml
+      - template: http/miscellaneous/directory-listing.yaml

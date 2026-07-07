@@ -8,4 +8,7 @@ info:
   tags: workflow,kibana
 
 workflows:
-  - template: RBKD-templates/http/technologies/kibana-detect.yaml
+  - template: http/exposed-panels/kibana-panel.yaml
+    subtemplates:
+      - template: http/misconfiguration/exposed-kibana.yaml
+      - template: http/exposures/files/elastic-kibana-config.yaml

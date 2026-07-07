@@ -8,5 +8,6 @@ info:
   tags: workflow,rocketmq
 
 workflows:
-  - template: RBKD-templates/http/technologies/rocketmq-detect.yaml
-  - template: RBKD-templates/http/exposures/rocketmq-console-exposed.yaml
+  - template: http/exposed-panels/rocketmq-console-exposure.yaml
+    subtemplates:
+      - template: network/misconfig/apache-rocketmq-broker-unauth.yaml

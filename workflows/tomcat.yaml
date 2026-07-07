@@ -9,4 +9,7 @@ info:
 
 workflows:
   - template: http/technologies/apache/tomcat-detect.yaml
-  - template: RBKD-templates/http/exposures/git-config-exposed.yaml
+    subtemplates:
+      - template: http/default-logins/apache/tomcat-default-login.yaml
+      - template: http/misconfiguration/tomcat-directory-listing.yaml
+      - template: http/exposed-panels/apache/public-tomcat-manager.yaml

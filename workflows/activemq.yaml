@@ -8,3 +8,7 @@ info:
   tags: workflow,activemq
 
 workflows:
+  - template: http/exposed-panels/activemq-panel.yaml
+    subtemplates:
+      - template: http/default-logins/activemq/activemq-default-login.yaml
+      - template: http/default-logins/activemq/activemq-artemis-default-login.yaml

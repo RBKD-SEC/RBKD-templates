@@ -9,4 +9,5 @@ info:
 
 workflows:
   - template: RBKD-templates/network/detection/zookeeper-detect.yaml
-  - template: RBKD-templates/network/misconfig/zookeeper-unauth.yaml
+    subtemplates:
+      - template: network/exposures/exposed-zookeeper.yaml

@@ -9,4 +9,5 @@ info:
 
 workflows:
   - template: RBKD-templates/network/detection/ssh-detect.yaml
-  - template: RBKD-templates/javascript/default-logins/ssh-mini-brute.yaml
+    subtemplates:
+      - template: RBKD-templates/javascript/default-logins/ssh-mini-brute.yaml

@@ -8,4 +8,6 @@ info:
   tags: workflow,consul
 
 workflows:
-  - template: RBKD-templates/http/exposures/consul-unauth.yaml
+  - template: http/exposed-panels/hashicorp-consul-agent.yaml
+    subtemplates:
+      - template: RBKD-templates/http/exposures/consul-unauth.yaml

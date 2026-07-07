@@ -9,4 +9,8 @@ info:
 
 workflows:
   - template: http/technologies/jenkins-detect.yaml
-  - template: RBKD-templates/http/exposures/swagger-ui-exposed.yaml
+    subtemplates:
+      - template: http/exposed-panels/jenkins-login.yaml
+      - template: http/default-logins/jenkins/jenkins-default.yaml
+      - template: http/misconfiguration/jenkins/jenkins-users-exposure.yaml
+      - template: http/vulnerabilities/jenkins/jenkins-script.yaml

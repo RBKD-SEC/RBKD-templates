@@ -8,4 +8,6 @@ info:
   tags: workflow,druid
 
 workflows:
-  - template: RBKD-templates/http/exposures/druid-monitor-exposed.yaml
+  - template: http/exposed-panels/druid-console-exposure.yaml
+    subtemplates:
+      - template: http/misconfiguration/druid-monitor.yaml

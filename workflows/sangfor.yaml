@@ -9,3 +9,8 @@ info:
 
 workflows:
   - template: RBKD-templates/http/technologies/sangfor-detect.yaml
+    subtemplates:
+      - template: RBKD-templates/http/vulnerabilities/sangfor-af-cve-2023-30803-auth-bypass.yaml
+      - template: http/vulnerabilities/sangfor/sangfor-ngaf-lfi.yaml
+      - template: RBKD-templates/http/vulnerabilities/sangfor-af-cve-2023-30805-rce.yaml
+      - template: RBKD-templates/http/vulnerabilities/sangfor-sslvpn-rce.yaml

@@ -9,4 +9,5 @@ info:
 
 workflows:
   - template: RBKD-templates/network/detection/memcached-detect.yaml
-  - template: RBKD-templates/network/misconfig/memcached-unauth.yaml
+    subtemplates:
+      - template: network/misconfig/memcached-stats.yaml

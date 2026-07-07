@@ -8,3 +8,7 @@ info:
   tags: workflow,rabbitmq
 
 workflows:
+  - template: http/exposed-panels/rabbitmq-dashboard.yaml
+    subtemplates:
+      - template: http/default-logins/rabbitmq/rabbitmq-default-login.yaml
+      - template: http/misconfiguration/rabbitmq-exporter-metrics.yaml

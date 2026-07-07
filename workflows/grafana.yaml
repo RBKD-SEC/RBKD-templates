@@ -9,3 +9,7 @@ info:
 
 workflows:
   - template: http/exposed-panels/grafana-detect.yaml
+    subtemplates:
+      - template: http/default-logins/grafana/grafana-default-login.yaml
+      - template: http/misconfiguration/grafana-unauth-access.yaml
+      - template: http/misconfiguration/grafana-public-signup.yaml

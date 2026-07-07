@@ -8,5 +8,9 @@ info:
   tags: workflow,prometheus
 
 workflows:
-  - template: RBKD-templates/http/technologies/prometheus-detect.yaml
-  - template: RBKD-templates/http/exposures/prometheus-metrics-exposed.yaml
+  - template: http/exposed-panels/prometheus-exposed-panel.yaml
+    subtemplates:
+      - template: http/exposures/configs/prometheus-metrics.yaml
+      - template: http/misconfiguration/prometheus/prometheus-unauth.yaml
+      - template: http/misconfiguration/prometheus/prometheus-config.yaml
+      - template: http/misconfiguration/prometheus/prometheus-targets.yaml

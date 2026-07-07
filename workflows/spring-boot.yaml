@@ -8,6 +8,9 @@ info:
   tags: workflow,spring-boot
 
 workflows:
-  - template: RBKD-templates/http/technologies/spring-boot-detect.yaml
-  - template: RBKD-templates/http/exposures/spring-boot-actuator-exposed.yaml
-  - template: RBKD-templates/http/exposures/swagger-ui-exposed.yaml
+  - template: http/technologies/springboot-actuator.yaml
+    subtemplates:
+      - template: http/misconfiguration/springboot/springboot-env.yaml
+      - template: http/misconfiguration/springboot/springboot-heapdump.yaml
+      - template: http/misconfiguration/springboot/springboot-mappings.yaml
+      - template: http/misconfiguration/springboot/springboot-jolokia.yaml

@@ -9,4 +9,5 @@ info:
 
 workflows:
   - template: http/technologies/jboss-detect.yaml
-  - template: RBKD-templates/http/exposures/jboss-jmx-console-exposed.yaml
+    subtemplates:
+      - template: http/misconfiguration/jboss-jmx-console-unauth.yaml

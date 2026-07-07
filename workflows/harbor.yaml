@@ -9,3 +9,5 @@ info:
 
 workflows:
   - template: http/technologies/harbor-detect.yaml
+    subtemplates:
+      - template: http/default-logins/harbor-registry-default-login.yaml

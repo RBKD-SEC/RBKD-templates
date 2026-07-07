@@ -8,4 +8,6 @@ info:
   tags: workflow,php
 
 workflows:
-  - template: RBKD-templates/http/exposures/phpinfo-exposed.yaml
+  - template: http/technologies/php-detect.yaml
+    subtemplates:
+      - template: http/exposures/configs/phpinfo-files.yaml

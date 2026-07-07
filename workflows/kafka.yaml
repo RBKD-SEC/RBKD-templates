@@ -9,5 +9,6 @@ info:
 
 workflows:
   - template: RBKD-templates/http/technologies/kafka-detect.yaml
-  - template: RBKD-templates/http/exposures/kafka-connect-exposed.yaml
-  - template: RBKD-templates/network/misconfig/kafka-unauth.yaml
+    subtemplates:
+      - template: RBKD-templates/http/exposures/kafka-connect-exposed.yaml
+      - template: RBKD-templates/network/misconfig/kafka-unauth.yaml

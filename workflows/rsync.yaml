@@ -9,4 +9,5 @@ info:
 
 workflows:
   - template: RBKD-templates/network/detection/rsync-detect.yaml
-  - template: RBKD-templates/network/misconfig/rsync-anonymous-list.yaml
+    subtemplates:
+      - template: RBKD-templates/network/misconfig/rsync-anonymous-list.yaml

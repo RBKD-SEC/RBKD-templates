@@ -9,4 +9,5 @@ info:
 
 workflows:
   - template: network/detection/redis-detect.yaml
-  - template: RBKD-templates/network/misconfig/redis-no-auth.yaml
+    subtemplates:
+      - template: network/exposures/exposed-redis.yaml

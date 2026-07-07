@@ -9,3 +9,6 @@ info:
 
 workflows:
   - template: http/technologies/nexus-detect.yaml
+    subtemplates:
+      - template: http/default-logins/nexus/nexus-default-login.yaml
+      - template: http/misconfiguration/nexus-repository-anonymous-access.yaml

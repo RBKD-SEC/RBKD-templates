@@ -9,4 +9,6 @@ info:
 
 workflows:
   - template: http/technologies/weblogic-detect.yaml
-  - template: RBKD-templates/http/exposures/weblogic-console-exposed.yaml
+    subtemplates:
+      - template: http/exposed-panels/weblogic-login.yaml
+      - template: http/default-logins/weblogic/weblogic-weak-login.yaml

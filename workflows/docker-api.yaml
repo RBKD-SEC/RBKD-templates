@@ -8,4 +8,6 @@ info:
   tags: workflow,docker-api
 
 workflows:
-  - template: RBKD-templates/http/exposures/docker-api-unauth.yaml
+  - template: http/misconfiguration/exposed-docker-api.yaml
+    subtemplates:
+      - template: http/misconfiguration/docker-daemon-exposed.yaml

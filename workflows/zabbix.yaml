@@ -8,4 +8,7 @@ info:
   tags: workflow,zabbix
 
 workflows:
-  - template: RBKD-templates/http/technologies/zabbix-detect.yaml
+  - template: http/exposed-panels/zabbix-server-login.yaml
+    subtemplates:
+      - template: http/default-logins/zabbix/zabbix-default-login.yaml
+      - template: http/misconfiguration/zabbix-dashboards-access.yaml

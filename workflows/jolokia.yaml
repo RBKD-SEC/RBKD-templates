@@ -8,4 +8,7 @@ info:
   tags: workflow,jolokia
 
 workflows:
-  - template: RBKD-templates/http/exposures/jolokia-exposed.yaml
+  - template: http/technologies/jolokia-detect.yaml
+    subtemplates:
+      - template: http/misconfiguration/springboot/springboot-jolokia.yaml
+      - template: http/vulnerabilities/spring/jolokia-logback-jndi-rce.yaml

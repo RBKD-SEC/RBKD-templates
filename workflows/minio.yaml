@@ -8,4 +8,6 @@ info:
   tags: workflow,minio
 
 workflows:
-  - template: RBKD-templates/http/technologies/minio-detect.yaml
+  - template: http/exposed-panels/minio-browser.yaml
+    subtemplates:
+      - template: http/default-logins/minio/minio-default-login.yaml
