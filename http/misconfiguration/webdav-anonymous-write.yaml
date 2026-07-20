@@ -1,0 +1,38 @@
+id: webdav-anonymous-write
+
+info:
+  name: WebDAV Anonymous Text File Write
+  author: penetration-team
+  severity: high
+  description: |
+    Confirms unauthenticated WebDAV write access with a random text marker.
+    The marker is read back and deleted in the same request sequence.
+  metadata:
+    max-request: 3
+  tags: webdav,iis,misconfig,upload,intrusive
+
+variables:
+  marker: "{{rand_base(12)}}"
+
+http:
+  - raw:
+      - |
+        PUT /.rbkd-{{marker}}.txt HTTP/1.1
+        Host: {{Hostname}}
+        Content-Type: text/plain
+
+        rbkd-{{marker}}
+      - |
+        GET /.rbkd-{{marker}}.txt HTTP/1.1
+        Host: {{Hostname}}
+      - |
+        DELETE /.rbkd-{{marker}}.txt HTTP/1.1
+        Host: {{Hostname}}
+
+    matchers:
+      - type: dsl
+        dsl:
+          - "status_code_1 >= 200 && status_code_1 < 300"
+          - "status_code_2 == 200 && contains(body_2, 'rbkd-{{marker}}')"
+          - "status_code_3 >= 200 && status_code_3 < 300"
+        condition: and

@@ -3,6 +3,7 @@ id: rabbitmq
 info:
   name: Rabbitmq Scan
   author: internal
+  severity: info
   description: |
     Service-specific scan for rabbitmq. Covers: authentication checks.
   tags: workflow,rabbitmq

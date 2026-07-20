@@ -1,0 +1,41 @@
+id: samba-swat-mini-brute
+
+info:
+  name: Samba SWAT Mini Brute - 2x2 Dictionary
+  author: penetration-team
+  severity: high
+  description: |
+    Tests four approved HTTP Basic credential pairs against a confirmed SWAT
+    endpoint with one thread and stops at the first match.
+  metadata:
+    max-request: 4
+  tags: samba,swat,default-login,http
+
+http:
+  - attack: pitchfork
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Hostname}}
+        Authorization: Basic {{base64(username + ':' + password)}}
+    payloads:
+      username:
+        - admin
+        - root
+      password:
+        - admin
+        - admin123
+    threads: 1
+    stop-at-first-match: true
+
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: word
+        part: body
+        words:
+          - SWAT
+          - Samba
+        condition: or

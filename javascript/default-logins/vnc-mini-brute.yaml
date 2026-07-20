@@ -1,0 +1,37 @@
+id: vnc-mini-brute
+
+info:
+  name: VNC Mini Brute - 2 Password Dictionary
+  author: penetration-team
+  severity: high
+  description: |
+    Tests two approved VNC passwords with one thread and stops at the first match.
+    MAX 2 ATTEMPTS. Intended only for explicitly authorized credential checks.
+  metadata:
+    max-request: 2
+  tags: js,vnc,default-login,network
+
+javascript:
+  - pre-condition: |
+      isPortOpen(Host,Port);
+    code: |
+      var vnc = require('nuclei/vnc');
+      var client = new vnc.VNCClient();
+      client.Connect(Host, Port, Password);
+    args:
+      Host: "{{Host}}"
+      Port: "5900"
+      Password: "{{passwords}}"
+    threads: 1
+    attack: pitchfork
+    stop-at-first-match: true
+    payloads:
+      passwords:
+        - admin
+        - password
+    matchers:
+      - type: dsl
+        dsl:
+          - "success == true"
+          - "response == true"
+        condition: and

@@ -4,10 +4,11 @@ info:
   name: Ssh Scan
   author: internal
   description: |
-    Service-specific scan for ssh. Covers: fingerprint detection, authentication checks.
+    Service-specific scan for ssh. Covers: fingerprint, vulnerability, and authentication checks.
   tags: workflow,ssh
 
 workflows:
   - template: RBKD-templates/network/detection/ssh-detect.yaml
     subtemplates:
+      - template: RBKD-templates/network/vulnerabilities/cve-2024-6387-version-check.yaml
       - template: RBKD-templates/javascript/default-logins/ssh-mini-brute.yaml
