@@ -10,7 +10,7 @@ info:
     MAX 4 ATTEMPTS. Stops at first match.
   metadata:
     max-request: 4
-  tags: js,ssh,default-login,network
+  tags: js,ssh,network
 
 javascript:
   - pre-condition: |
@@ -36,10 +36,11 @@ javascript:
         - admin
       passwords:
         - root
-        - admin123
+        - admin
     matchers:
       - type: dsl
         dsl:
           - "response == true"
           - "success == true"
         condition: and
+# digest: 4b0a00483046022100a073fb40fc9cb46e6e006255a906d7e667c645f64fce9bd398f9f0108c009c03022100819f9d128c02d8a57b8ff97b8e502ab6f8bf9317ad348c48fd390c3bae351d1e:7ec931ac1b7d2e9f67f639e8d62a6615
