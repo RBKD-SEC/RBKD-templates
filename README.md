@@ -6,24 +6,49 @@
 
 ## 使用方式
 
-将本仓库克隆到官方 nuclei-templates 同级目录：
+> ⚠️ **不要直接 clone 到官方 `nuclei-templates/` 目录内部**：`nuclei -update-templates`
+> 会执行孤儿清理（删除官方 release 之外的所有模板文件），本仓库会被当作孤儿删除。
+> 采用「物理分离 + 符号链接」方式安装可彻底规避。
+
+### 安装
 
 ```bash
-cd nuclei-templates
-git clone https://github.com/RBKD-SEC/RBKD-templates
+# 1. 克隆到官方 nuclei-templates 目录之外
+git clone https://github.com/RBKD-SEC/RBKD-templates ~/RBKD-templates
+
+# 2. 在官方模板目录内建立符号链接
+#    （workflow 用形如 template: RBKD-templates/http/xxx.yaml 的相对路径引用子模板，
+#     该路径以官方模板目录为基准解析，必须通过符号链接桥接）
+ln -s ~/RBKD-templates ~/nuclei-templates/RBKD-templates
+
+# 3. 让 nuclei 同时加载官方与 RBKD 两个目录（编辑 nuclei 配置：
+#    macOS ~/Library/Application Support/nuclei/config.yaml，
+#    Linux ~/.config/nuclei/config.yaml）
+#    templates:
+#      - ~/nuclei-templates
+#      - ~/RBKD-templates
 ```
 
-最终目录结构：
+最终结构：
 ```text
-nuclei-templates/              # 官方模板
+~/nuclei-templates/            # 官方模板
+├── http/
+├── ...
+└── RBKD-templates -> ~/RBKD-templates   # 符号链接，桥接 workflow 相对路径
+
+~/RBKD-templates/              # 本仓库（独立 git 仓库，在官方目录之外）
 ├── http/
 ├── network/
 └── workflows/
-└── RBKD-templates/            # 本仓库（自定义模板）
-    ├── http/
-    ├── network/
-    └── workflows/
 ```
+
+为什么符号链接不会被删除：nuclei 的孤儿清理用 `filepath.WalkDir` 遍历，
+**不跟随符号链接目录**，且符号链接本身不是 `.yaml` 文件，既不会被当作孤儿，
+也不会被递归清理。因此 `nuclei -update-templates` 对该符号链接完全安全。
+
+更新方式：
+- **官方模板**：`nuclei -update-templates` 或 `cd ~/nuclei-templates && git pull`
+- **RBKD**：`cd ~/RBKD-templates && git pull`
 
 核心模式：**先用 nmap / httpx 识别服务，再按服务名精准调用对应 workflow**。
 
@@ -70,15 +95,20 @@ cd nuclei-templates
 nmap -sV -p 1-65535 targets.txt -oA nmap-results
 httpx -l web-targets.txt -o httpx-results.json -j
 
-# 按服务名调用对应 workflow（RBKD-templates 为本仓库）
-nuclei -l tomcat-targets.txt -t RBKD-templates/workflows/tomcat.yaml -rlm 30 -j -o results/tomcat.json
-nuclei -l redis-targets.txt -t RBKD-templates/workflows/redis.yaml -rlm 30 -j -o results/redis.json
+# 按服务名调用对应 workflow
+# 注意：加载 workflow 必须用 -workflows，不能用 -t
+# （nuclei 用 -t 加载单个 workflow 文件会提示 "no templates provided"）
+nuclei -l tomcat-targets.txt -workflows ~/RBKD-templates/workflows/tomcat.yaml -rlm 30 -j -o results/tomcat.json
+nuclei -l redis-targets.txt -workflows ~/RBKD-templates/workflows/redis.yaml -rlm 30 -j -o results/redis.json
 
 # ICS/SCADA 专项（单线程，低速率）
-nuclei -l ics-targets.txt -t RBKD-templates/workflows/s7comm.yaml -c 1 -rlm 10 -j -o results/s7comm.json
+nuclei -l ics-targets.txt -workflows ~/RBKD-templates/workflows/s7comm.yaml -c 1 -rlm 10 -j -o results/s7comm.json
+
+# 按 tag 直接加载官方 + RBKD 的所有相关模板（依赖上面的 config 配置）
+nuclei -tags ssh -l targets.txt -rlm 30 -j -o results/ssh.json
 
 # 验证全部模板语法
-nuclei -validate -t RBKD-templates
+nuclei -validate -t ~/RBKD-templates
 ```
 
 ## 参考
