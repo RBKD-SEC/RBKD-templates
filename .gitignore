@@ -1,11 +1,9 @@
-# IDE
+# IDE / OS
 .idea/
 .vscode/
 *.swp
 *.swo
 *~
-
-# OS
 .DS_Store
 Thumbs.db
 
@@ -13,3 +11,19 @@ Thumbs.db
 *.tmp
 *.bak
 *.log
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Release artifacts
+*.tar.gz
+*.zip
+dist/
+build/
+releases/
+
+# Local environment
+.env
+.venv/

@@ -1,0 +1,2586 @@
+{
+  "assets": [
+    {
+      "content_digest": "sha256:1779e32d119dc8fdb1dec53e8801ce301c56a6a46fafdfb1c2f95f6e9b24b871",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/default-logins/samba-swat-mini-brute.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-samba-swat-mini-brute-1779e32d",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:2d2ca446d3fb2debd4402491aa0d2bdc58cb686dba7e0452c6f8e37d64997d55",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/exposures/consul-unauth.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-consul-unauth-2d2ca446",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:838e2496712ea51a1d5ddb6a0c966368e8bdd75c2e4dc903a693e7486176f3a7",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/exposures/etcd-unauth.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-etcd-unauth-838e2496",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7554b2482b59283a471e36a672204a1608b487ae64eb758415dc26a320733d46",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/exposures/kafka-connect-exposed.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kafka-connect-exposed-7554b248",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:b9e80298e4f4c4a44b7dc05751fea7ff7ae92f97bbf6d5219bde364bea799129",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/exposures/kubernetes-api-unauth.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kubernetes-api-unauth-b9e80298",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:b4788b4ce8f77d9cb91d66bcc65d3fe6c72911a433352f881a62bedb7862216a",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/misconfiguration/webdav-anonymous-write.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-webdav-anonymous-write-b4788b4c",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:30554365daa1817c7b789dc361b0a902066083655602234ab6d03de09e331e35",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/abb-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-abb-detect-30554365",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3f62331b7b59091c7648c2f334de82a8ea47fc7be1e7590bb6e52852fde4a16b",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/apusic-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-apusic-detect-3f62331b",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:917aee3e2de890e882a9928bb40353f93ae9fc1d990405b51bf8e8414f767ba8",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/bes-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-bes-detect-917aee3e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:34ba966040196b9a17ceddefcfc25cd015c3df8a1d1999291b36e0580cdd3474",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/dahua-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-dahua-detect-34ba9660",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:01807b10c01376c7273635ebebd6413caf9fdb794b5c7554a3b4ec49c2d8e19f",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/ge-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ge-detect-01807b10",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:a5f500f276c857ddfed2aaadede5ce5df86662d697807789313f48275e1b29c8",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/h3c-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-h3c-detect-a5f500f2",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7d0eada935a53a090ba5511606b7ab31eb17b57321badff523d24f5de5fc5794",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/huawei-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-huawei-detect-7d0eada9",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:dcd4677d52611a092d59fb689125007a15500caada3f8bd78d56aebc2416bfe8",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/kafka-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kafka-detect-dcd4677d",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3bae9b6ec541a0538e4a5dff62e71308920820d008bcd4b1a6c04dfc3af1a998",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/nginx-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-nginx-detect-3bae9b6e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:f661854fe9d523f8e9eda416ddb68de31813d78ae49ec008821dba698f577bd3",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/nsfocus-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-nsfocus-detect-f661854f",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7c8b659ebaba6dd66de5fa68deaa0ffc97670b7a44ba96ce8e179a0ed7dae5d1",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/omron-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-omron-detect-7c8b659e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:407a9fba1315a59a50229ebaee2fd4dfc260c105997ebbc01d27d5b82d7606d9",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/qianxin-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-qianxin-detect-407a9fba",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:54719bf1532689294c201d3d6276f9f921839bf800a40fb0cfb373bd1c7bd0bc",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/rockwell-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-rockwell-detect-54719bf1",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d607b2de10185dca771ec870a93fa6f57d81d961566fdb0869a005f99f926c98",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/ruijie-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ruijie-detect-d607b2de",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:43ffd706da6c8c4918348f2722c219f0cbde682820a91f21b8f958c701da92f1",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/sangfor-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-sangfor-detect-43ffd706",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:c6252cabb423d0eadbacd313f65f65ccebb24c35540b8e57efd53647dc2cab67",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/schneider-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-schneider-detect-c6252cab",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:0d51c820159b8d0f4a2eb75529b0aa46a90b0a670657e3102c2e69865e465111",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/siemens-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-siemens-detect-0d51c820",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d9e1ee1ecae845054d0e87908f94ff95a766d6bc6eaa2a13783586d65d73bacf",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/thinkphp-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-thinkphp-detect-d9e1ee1e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:695f7c0fe324f7dcf94ee32f030482daa708af24fe634f8370946100a625db0d",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/tongweb-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-tongweb-detect-695f7c0f",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:c9f0e8f0c316c38b56b1ed0b9df8e904b5ca77ff1ac0188f62f86834c82fdaf9",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/topsec-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-topsec-detect-c9f0e8f0",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7e37b1fade6f4473267d8ee6abe9d6d248e5d9857ac62740764d2a97f3bed6c8",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/technologies/venustech-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-venustech-detect-7e37b1fa",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:f166548b02129b7223f6734a7dfbfcb608e45ce6bc10c85b5c9782989b409b5d",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/cve-2014-6271-echo.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-CVE-2014-6271-echo-f166548b",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:b2cd815edec9670637458fd61c1efd785eec16cfd3712ab02ac56ce1f046ae59",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/cve-2017-7529.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-CVE-2017-7529-b2cd815e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:422e780a51a3e2a4d336f7b96b3de0a9725705c58fd07712b411ebd34865972f",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/cve-2026-42945.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-CVE-2026-42945-422e780a",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:04e803bb2f556fe8def4903e1c8e9fc75a384d03e09feaa954429508340d2479",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/jumpserver-cve-2023-42820-predictable-captcha.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-jumpserver-cve-2023-42820-predictable-captcha-04e803bb",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:4a64bfe03f92d0e486043f20983423b2753e7f4cc3a8ba2f2b69df68357ad8cd",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/jumpserver-cve-2023-43652-auth-token.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-jumpserver-cve-2023-43652-auth-token-4a64bfe0",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:2b510ae3f5edd79a91c2e3f04972203f7dfc5db975ad6383d83efe166856267b",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/kingdee-eas-extweb-file-read.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kingdee-eas-extweb-file-read-2b510ae3",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:a1d09f177fbe5118fdc65881a98afb589e7185b23cb0319ca4666c6d634ef6bd",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/kingdee-eas-pdfviewlocal-file-read.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kingdee-eas-pdfviewlocal-file-read-a1d09f17",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:5da41c7f257e578e86221ce2f764dbbae13ad78675556cea913622f99038efd0",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/proxmox-cve-2024-21545-file-read.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-proxmox-cve-2024-21545-file-read-5da41c7f",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d6450bd5507ad8a78c1944bbbdb3bce815480e613727efe743f13b25210ce879",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/sangfor-af-cve-2023-30803-auth-bypass.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-sangfor-af-cve-2023-30803-auth-bypass-d6450bd5",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:205181eabd32efe46b0b88c61cef2951e06eaae8d1b205097eb81927f5bc9a86",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/sangfor-af-cve-2023-30805-rce.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-sangfor-af-cve-2023-30805-rce-205181ea",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:c60a97a93614a7fdcd32bffa82aa97863f79af8a58327a1d9c2f2270ab936e06",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "http/vulnerabilities/sangfor-sslvpn-rce.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-sangfor-sslvpn-rce-c60a97a9",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:a618d9c81cecb720d1a1af9cff22b21cae7435a710dfd400896e90ddf2789914",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "javascript/default-logins/ssh-mini-brute.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ssh-mini-brute-a618d9c8",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:abc3b3760057871c903a6d810afd7a6c8b21d708f21cc68f9b1cd0bd7a7c5afc",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "javascript/default-logins/vnc-mini-brute.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-vnc-mini-brute-abc3b376",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:6a5ecc1c3eb7c7f62541fed9f403dcf464f00848c1e09f160d84d9984d6a465f",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/default-logins/ftp-mini-brute.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ftp-mini-brute-6a5ecc1c",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:765bb4092b6aca96fbdcbbb9c4fd14af4ddc051d17a17fba4ee5a51734118a37",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/codesys-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-codesys-detect-765bb409",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:a1329cf16e5c6ca8454df372feff7b06b8b4aaf88f11c99d3dd9289a836f2bd3",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/dnp3-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-dnp3-detect-a1329cf1",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7fe425d64afb353eda4c4759814a480a366b5d5a04fe8877d04eb7084cdd21c5",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/iec104-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-iec104-detect-7fe425d6",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:0d87008edcb20ae8fbb167fc4ec66333e0f656bf411defbcd9711699dfbc5277",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/kingbase-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kingbase-detect-0d87008e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3a90ab9384335ed161eaf81b5ce38f50ee845aabd0fb7356ff1a0b8207205432",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/memcached-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-memcached-detect-3a90ab93",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d9ae01595279894a7536fa2a097a45ed856a0139987e87bed5f5672318aded01",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/mms-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-mms-detect-d9ae0159",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:6f15e875059f008fa8ec9ff83d10251806328eca3342cb3d823139c01a7d3d99",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/modbus-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-modbus-detect-6f15e875",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d5142b6e2475e7a73e67890b01521ae4821f72056b54cb07feb83958565c5139",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/oscar-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-oscar-detect-d5142b6e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:9db90591e7d2960cbb672e126184b3695590c7bc045ccfcaeb6948db1c94b474",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/postgres-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-postgres-detect-9db90591",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:8589d300699fe2256ae88bce391998dedcf14e355c72481fbc77934c64142acb",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/rsync-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-rsync-detect-8589d300",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7482fe26ee61bb8d95ba35bed39f83845860f309b28b1b473e1d67a78ea71416",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/s7comm-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-s7comm-detect-7482fe26",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:b43dd30c21d8db31ae69520b48feea07a2a1e7db0236dcae554a980aaaf25338",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/smb-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-smb-detect-b43dd30c",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:cd84cce8a5e7a6c1dd3998cab1186620928d2cc6c2797155be288a5b488a98a6",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/snmp-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-snmp-detect-cd84cce8",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3fc1b5f2b7b487384b940e003aac7972009e044bb612d50f23b8c5fbec268ea8",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/ssh-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ssh-detect-3fc1b5f2",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:be48b4c1aa1b9680bedaa6febf68b9edd59fa5e8f26e30214800b1c719662533",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/detection/zookeeper-detect.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-zookeeper-detect-be48b4c1",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:da0d14f1d2c83fdd0716652fbc7f8dc5c6bd5458a2d1f948d1972f38a0245855",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/misconfig/kafka-unauth.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kafka-unauth-da0d14f1",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:506e9ccb05efd236cc5b697f0f3d4d86b05f0bce8d459fa63480466ddc582364",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/misconfig/rsync-anonymous-list.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-rsync-anonymous-list-506e9ccb",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:501c2841c50656ec7df81023794195a8c51d4359f22ee24de52ed85c64cd6663",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/misconfig/smb-null-session.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-smb-null-session-501c2841",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:56e2e2279335a6779f4a52e00ebf534ddda16326904d42db3e7048348b6b2451",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/vulnerabilities/cve-2024-6387-version-check.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-cve-2024-6387-version-check-56e2e227",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:0f7e7c66d0149063dc0757d07ddc713ea484d76b9a96f500b88da17bb969947c",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "network/vulnerabilities/cve-2026-32746.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-cve-2026-32746-0f7e7c66",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d0d33f76e20e632fbffdbbde8acfa0d220f29336d7b5b4e1cde6b704f39ff1b1",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/abb.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-abb-d0d33f76",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:eadb240c1b50355bccf0fb6486ba7dea7883f38231d23dbfad30ca5cbeb8056d",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/activemq.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-activemq-eadb240c",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3ce4099eed81b2b802963d9da5d8e6de1f3d870fbbc3bbbe9fac86a93b542c08",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/apache.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-apache-3ce4099e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:4b34931601ed70f6c92b4af0c78e612aaaf59f38c4e312845fee9a5b9cac2436",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/apusic.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-apusic-4b349316",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:ee2296a461532f2da5f14de2aa8c5f10c6a0a4d4ad5d054a2ea1c55b052f0124",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/bes.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-bes-ee2296a4",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:53c20da999801c1d68b1c94e84fe2251f89401db1ca5f643b51377e85b177ef5",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/bounty-high-signal.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-bounty-high-signal-53c20da9",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:430ed534f5160cce02c2d56893686e899fd0339cd0a159d53a70f2cdc6f44c31",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/codesys.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-codesys-430ed534",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:f96310b704a0ba930bc3bdd361debc312ae6da56fd2a6b3d73a0fac2973758f8",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/consul.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-consul-f96310b7",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:ea76d12b4bf1fa429d9f6caba67dbbbf3351dbd67a520cf5fd7dc46a36148ef0",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/dahua.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-dahua-ea76d12b",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:2a2cf73b883d90c87240c06df1e5db4fbade1e15befb8be041fcb248f663cd83",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/dameng.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-dameng-2a2cf73b",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3875cf9ea3a34ec9456d44e9ab5ee65b961e23a3158ab5e44153523e79152607",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/dnp3.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-dnp3-3875cf9e",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:46ccc2d2c7779e79c7f1eba1137d8df0dc0c83f4593d80336f76f1cd35732df3",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/docker-api.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-docker-api-46ccc2d2",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:1ad80b94061d53901b5045812f504e98439d24d450a54a1dd4f4d3aabc72cd85",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/druid.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-druid-1ad80b94",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:79d613616fe712a2d1f9b8f92ef54c855cd42e25e74831369ba88c7e5872c851",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/etcd.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-etcd-79d61361",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:921bd3ad90229f46236c97daee487d45e20f95435c9e56211820a1b13c8192e3",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/ftp.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ftp-921bd3ad",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:0f8b0add645f118c4bad80242e669451e530859bddcbae5771d9bc69dc553da9",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/ge.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ge-0f8b0add",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:ca667a0ae945502515c4eb5d8aa61bfaa1067b530c893a115035e373da968383",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/grafana.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-grafana-ca667a0a",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:1c3066da0c4f66866f7e4bb73c111f3663a830a799e4c213a0b46afe1a29fb79",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/h3c.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-h3c-1c3066da",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:00f44db46a4bc351bb8d82a92a5e927b018c32be277454422a828e69fc09c144",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/harbor.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-harbor-00f44db4",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d5ffe62abe875d40fdb2ccd7f654c21cfdeeb5f438eece5e355031e0f0c933bf",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/hikvision.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-hikvision-d5ffe62a",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7f21a56a61d749eca118e9567fc047d9efd6e8c050885e7002d078788921e65f",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/huawei.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-huawei-7f21a56a",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:aca5ff029ef070c7c46f00dca1fdf7f6b8eecfa357b977ea2d06a002a3721c9f",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/iec104.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-iec104-aca5ff02",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:c45ef1303d102512f12abf388fda728546c1ad70247cd1633812ef75f7e29e11",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/jboss.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-jboss-c45ef130",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:4e119fad01233e304e18ceda3bda8268b437d9823c62c5cff4323b2e4946bd42",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/jenkins.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-jenkins-4e119fad",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:24639ca71df2128731ae13d05905de9c54ca7c78b582905cabc8574751d4a9c7",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/jolokia.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-jolokia-24639ca7",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:5bb1a0cd2bba1eac8b5f040f7b11ba077331477298e7b1bb27757fafa1f6fec4",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/kafka.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kafka-5bb1a0cd",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:5c7ae229df39762d163ebba0e54582f5dc3bfc162228deda3d8d846967731f1f",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/kibana.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kibana-5c7ae229",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:40efbd8bac6e6a8a66c930dea83e2b9f46f07829c6166ff767f06a69905eaefb",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/kingbase.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kingbase-40efbd8b",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:889b3ebba55e3978aabfce656848f7b37ea6e87d1e51beb25cb11ba0002a01c2",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/kubernetes.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-kubernetes-889b3ebb",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:5f471cfda748782d4358dff17b3a630ea6f4b794db7341881dd060e761adae08",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/memcached.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-memcached-5f471cfd",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:1fdc37408dab86ed20b282fbaca4e4e3e9dddea56b4269740034e5c1897f58a0",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/minio.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-minio-1fdc3740",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:5de2290dd6e426cab8b32720b966c0c147cbd3dcbb2d632d42220dbcc5868ede",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/mms.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-mms-5de2290d",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:ce2ec4b913f9d30ab1f0d301a309f998c8909c9ced9db64d42542f82c53a21ee",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/modbus.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-modbus-ce2ec4b9",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:2a548a301e28b32fb2010d8c680060cc26417465f5fbae4371e464e99d64e358",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/mongodb.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-mongodb-2a548a30",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3ee278b8b8bbf50ecb49547e24bd3efbb8be0c2b34f66a3e28dc22afada4437c",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/mssql.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-mssql-3ee278b8",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3a2f89fd3dd4827f85cfac1ca4e32a6ba5e42cada33e5db0d1ec282298dedbcd",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/mysql.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-mysql-3a2f89fd",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d75160e5e3886dce1f3e2548794af1a4468b07ff49d5b31eec4e15e87f16070a",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/nexus.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-nexus-d75160e5",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3d3a879f8301ac87023208ab0d997940f74cf4ff010eef31a4ae7d08218e3303",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/nginx.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-nginx-3d3a879f",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:35d814bbfa95d501a747a2498be9c646f77795e560562ae3b5287661f6f7606c",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/nsfocus.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-nsfocus-35d814bb",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:9d6623488ddfafbac7a5184a81378fa945cfbc5a08779604cc5acb110aeac79a",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/omron.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-omron-9d662348",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:9681aeafca76058e84f6b42296097652b3831130eeea50952e37e87d61806996",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/oscar.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-oscar-9681aeaf",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:ee82d8db517807f44530eec58a80a60caf710730563df1e15141153f7e65b629",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/php.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-php-ee82d8db",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:3d7cf29941e560c62ef130971ec4594f9ead747220bdc0fbe29c6282ea68c325",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/postgres.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-postgres-3d7cf299",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:b0721c84f0e8b580e03318b0cd9de146eb408759382f903f56c910c9302a8806",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/prometheus.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-prometheus-b0721c84",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:e9a08bebb107366b248b4db169a379c43503ac2c0dba0ec67fb3e3d9c3f9cc52",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/qianxin.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-qianxin-e9a08beb",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:ff193f142e2bc0fa91ae30b6941b2357d44b01c77a32b3b9b736ea809a2d253e",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/rabbitmq.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-rabbitmq-ff193f14",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:811ccd95cd3d2ecd9c30fddffcf3756c8b240242627f9e59ce2202eee77c36f6",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/rdp.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-rdp-811ccd95",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d2e4ffe6874e849d51da45dcfecf6db5aec9aee46f9995140270ca4faf091a06",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/redis.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-redis-d2e4ffe6",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d00cef659b795137847afe99ca25de0370e411c168ca4119e31467af70fc106e",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/rocketmq.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-rocketmq-d00cef65",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:0d8edc5132b56a656e3a95b6b56f5147507a6e0f7b648bed5ae011a04c3d01ea",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/rockwell.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-rockwell-0d8edc51",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:9b9f945137b674c9950b2166a13f3a1e054b41c8856b4525842d78a7de8ffefc",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/rsync.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-rsync-9b9f9451",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:cae0b59025a827c57d8d4ca2142c3f3c5c1c92b5ab8007c94e1c327a55e49ce8",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/ruijie.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ruijie-cae0b590",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:5d2b7bd8de3ef197ad6ec108b58087ecc73f677b7c25f01e937f55fbc1756ae3",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/s7comm.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-s7comm-5d2b7bd8",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:d2d01cc5cb042944eac091bbefbe592e900b70c755d85919f0d76cb7e0b03881",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/sangfor.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-sangfor-d2d01cc5",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:5dcee2b30ba6679c3635316f4c7fbcdfb03c942fadd894edc2b5e449be54da7c",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/schneider.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-schneider-5dcee2b3",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:738a93d64c0896bbd08d800d6e5004a8301a01df34a957319458018c6cda9223",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/siemens.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-siemens-738a93d6",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7d51242b97a403c04d0aa1bfbec4b4b0afa5c9bd5d9dc2fe3a3b381e103024a5",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/smb.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-smb-7d51242b",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:c4c36bd45b10d020f2a1ebe323824b21142b88b61e7311de7d557b134d2752e5",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/snmp.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-snmp-c4c36bd4",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:cd3106958c29b950e0f99bcb1d8db5babb57e07944392e74dd2532e2569e2bf1",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/spring-boot.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-spring-boot-cd310695",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:0321a49456a6903f456594dc0086e5c1bf5ee47d9d3835f65df8b3074a1b756d",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/ssh.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-ssh-0321a494",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:61c680d495f0282ad5bc5b96b829603986308f1fa9804944d1785bb709ef08da",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/telnet.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-telnet-61c680d4",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:284c60fde8d7cad83d04ac48f21a5f2ee816f7da42edcc17166af50f2f47c048",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/tomcat.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-tomcat-284c60fd",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:58395b836280c10b0bb4079042fc42a380e829097329c27987a1cc778cb2f989",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/tongweb.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-tongweb-58395b83",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:90e5b8a488d96beb4c0c1a5c7f1f289831d8abb5bf69f23260fdfc40299f7b4e",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/topsec.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-topsec-90e5b8a4",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:7da5d830dd08ce0eb5890b421fbf2418b686394a86c90a3e6f4b7f313caeeea6",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/venustech.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-venustech-7da5d830",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:031585ce3c1cce8c64435362c3ed181332bc9f6b1ffea536dbab3b71cd4c5d5b",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/weblogic.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-weblogic-031585ce",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:107a3875712e090f9510036b87732e887d925d9fae0f746051d1bc9b1c085c5e",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/zabbix.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-zabbix-107a3875",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    },
+    {
+      "content_digest": "sha256:40f6cb1a09d603c660e6ad8e8a800d30b13e2035c8b21148c171420c2981dff2",
+      "contributor_authority": "unknown",
+      "decision": "held",
+      "destination": "workflows/zookeeper.yaml",
+      "modifications": "",
+      "origin_class": "unknown",
+      "provenance_id": "prov-rbkd-zookeeper-40f6cb1a",
+      "reason": "pending upstream MIT provenance mapping and maintainer review",
+      "required_notices": [],
+      "reviewer": null,
+      "rights_basis": "unknown",
+      "source": {
+        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
+        "path": "unknown",
+        "revision": "unknown",
+        "url": "https://unknown"
+      },
+      "spdx": "LicenseRef-UNKNOWN"
+    }
+  ],
+  "repository": "RBKD-templates",
+  "schema_version": 1
+}

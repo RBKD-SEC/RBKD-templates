@@ -1,0 +1,27 @@
+name: rbkd-templates-gates
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install jsonschema pyyaml
+
+      - name: Validate templates
+        run: python scripts/validate_templates.py
+
+      - name: Run tests
+        run: python scripts/test_template_gates.py

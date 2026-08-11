@@ -1,0 +1,12 @@
+RBKD-SEC / RBKD-templates
+Copyright 2026 RBKD-SEC
+
+This repository contains Nuclei templates and workflows adapted from the
+official nuclei-templates project, which is licensed under the MIT License:
+
+    https://github.com/projectdiscovery/nuclei-templates/blob/main/LICENSE.md
+    Copyright ProjectDiscovery, Inc.
+
+Per-template upstream provenance and modification summaries are recorded in
+capabilities/rights/provenance.json. Templates that have not yet completed
+provenance review are held and excluded from release candidates.

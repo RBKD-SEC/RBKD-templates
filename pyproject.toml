@@ -1,0 +1,12 @@
+[project]
+name = "rbkd-templates"
+version = "0.1.0"
+description = "Nuclei template capability repository"
+requires-python = ">=3.9"
+dependencies = [
+    "jsonschema>=4.21",
+    "pyyaml>=6.0",
+]
+
+[tool.uv]
+package = false

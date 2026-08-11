@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rbkd-sec.github.io/pentest-playbook/ops/repository-orchestration-v2/schemas/catalog-v1.schema.json",
+  "title": "Capability repository catalog v1",
+  "description": "能力仓共享目录外壳（capabilities/catalog-v1.json）。由各能力仓（finger/dict/POC/RBKD-templates）从作者源确定性生成并提交；Pentest 只维护本共享外壳，不保存四仓资产副本。目录只包含元数据、路径、摘要和契约，不内嵌指纹规则、字典词项、PoC 源码或 Nuclei YAML。未知主版本失败关闭；同一主版本内增加可选字段必须同步升级本 schema 并保留既有文档可校验（见 specs/repository-orchestration-v2/README.md）。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "repository",
+    "capabilities"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "description": "catalog-v1 协议主版本；未知主版本必须失败关闭"
+    },
+    "repository": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+$",
+      "description": "能力仓身份（finger/dict/POC/RBKD-templates）"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/capability"
+      }
+    }
+  },
+  "$defs": {
+    "capability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "path",
+        "contract",
+        "safety",
+        "lifecycle",
+        "replacement",
+        "provenance_id",
+        "content_digest",
+        "components",
+        "requires"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[^\\s/\\\\]+$",
+          "description": "仓内稳定能力 ID；唯一范围是 (repository, kind, id)，删除后永不复用。新 ID 必须 lowercase kebab-case 且不得仅以大小写区分；现有 RBKD ID 保持原始大小写并按字节精确匹配（仓内门禁在票 03-06 落实，本共享 schema 只做结构约束，语义规则见 validate_contracts.py）"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "fingerprint",
+            "dictionary",
+            "poc-detect",
+            "poc-exploit",
+            "nuclei-template",
+            "nuclei-workflow"
+          ],
+          "description": "初始能力类型；扩展 kind 需要 schema 兼容演进，不能复用现有 kind 改变语义"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$",
+          "description": "仓内相对路径 locator；禁止 .. 段、前导 /、反斜杠（语义校验拒绝路径逃逸）。路径只是定位信息，不是能力身份"
+        },
+        "contract": {
+          "$ref": "#/$defs/contract"
+        },
+        "safety": {
+          "type": "string",
+          "enum": [
+            "safe",
+            "optional",
+            "gated",
+            "manual-only"
+          ],
+          "description": "能力安全等级。生成适配器把 gated 映射为 Pentest catalog v2 的 manual-gated；manual-only 不生成可执行命令"
+        },
+        "lifecycle": {
+          "type": "string",
+          "enum": [
+            "active",
+            "deprecated",
+            "retired"
+          ],
+          "description": "active → deprecated → retired；deprecated 禁止建立新关系，retired 不提供可执行 locator 但永久保留 ID 与 replacement tombstone"
+        },
+        "replacement": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[^\\s/\\\\]+$"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "退役/替换指向的仓内能力 ID；retired 必须声明非空 replacement（语义校验）"
+        },
+        "provenance_id": {
+          "type": "string",
+          "pattern": "^prov-[A-Za-z0-9-]+$",
+          "description": "指向来源记录（provenance-v1）的不可猜测 ID；目录只包含权利状态 accepted 的能力"
+        },
+        "content_digest": {
+          "type": "string",
+          "pattern": "^sha256:[0-9a-f]{64}$",
+          "description": "能力载荷内容摘要；目录自身摘要存于 catalog-v1.sha256 sidecar，不在 JSON 内自引用"
+        },
+        "components": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._-]+(/[A-Za-z0-9._-]+)*$"
+          },
+          "description": "随能力分发且不能被独立引用的 helper/图片/载荷"
+        },
+        "requires": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/capability_ref"
+          },
+          "description": "运行依赖（可解析的稳定能力或工具接口）；不表达与 Pentest 知识条目的关系用途"
+        },
+        "extensions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          },
+          "description": "仓库命名空间扩展（如 rbkd: {}）；指纹规则、字典格式、PoC 参数、Nuclei metadata 留在各仓扩展中"
+        }
+      }
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_types",
+        "inputs",
+        "positive_evidence",
+        "negative_or_failure",
+        "interface_version"
+      ],
+      "properties": {
+        "target_types": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "positive_evidence": {
+          "type": "string",
+          "minLength": 1,
+          "description": "成功证据语义；不能只证明服务/版本/面板可能存在"
+        },
+        "negative_or_failure": {
+          "type": "string",
+          "minLength": 1,
+          "description": "阴性/失败语义；不能把超时或无匹配误报为漏洞证明"
+        },
+        "interface_version": {
+          "type": "string",
+          "minLength": 1,
+          "description": "执行接口或消费格式版本（如 nuclei-template-v1）"
+        }
+      }
+    },
+    "capability_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "kind",
+        "id"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+$"
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "fingerprint",
+            "dictionary",
+            "poc-detect",
+            "poc-exploit",
+            "nuclei-template",
+            "nuclei-workflow"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^[^\\s/\\\\]+$"
+        }
+      }
+    }
+  }
+}

@@ -78,6 +78,25 @@ ln -s ~/RBKD-templates ~/nuclei-templates/RBKD-templates
 └── .github/workflows/          # CI
 ```
 
+## Capability catalog & release
+
+本仓库是 repository-orchestration-v2 的 `nuclei-template` 能力仓。发布门禁：
+
+- 每个 YAML 顶层 `id` 作为稳定能力 ID。
+- `capabilities/catalog-v1.json` 仅包含 provenance 审批为 `accepted` 的模板；当前全部模板处于 `held` 待审状态，因此 catalog 为空。
+- 发布候选通过 `scripts/stage_release.py --calver YYYY.MM.DD.N` 生成，包含 catalog、schema、LICENSE（MIT）、NOTICE、provenance 与按原始路径保留的 accepted 模板。
+- 根布局与 `RBKD-templates` 名称保持不变，兼容现有命令。
+
+本地门禁：
+
+```bash
+python scripts/validate_templates.py
+python scripts/test_template_gates.py
+python scripts/generate_catalog.py --write
+python scripts/stage_release.py --calver 2026.08.10.1
+cd releases/2026.08.10.1 && shasum -a 256 -c SHA256SUMS
+```
+
 ## 设计原则
 
 - **服务精准匹配**：每个服务一个独立 workflow，直接 `template:` 引用模板路径。
