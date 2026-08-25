@@ -6,13 +6,23 @@ info:
   severity: info
   description: Detects Nginx web server via header or title.
   metadata:
+    verified: false
     max-request: 1
   tags: fingerprint,http,nginx,middleware
+
+  # 与官方覆盖的关系：nginx-version.yaml（Server 头带版本号 + 版本 extractor）、
+  #   default-nginx-page.yaml（默认页标题）。本模板的差异：可命中抹掉版本号的 "Server: nginx"。
+  #   多 matcher 保持 OR —— 指纹识别中「响应头指纹 OR 默认页指纹」是有意设计（任一强特征
+  #   即可判定），不属于隐式 OR 误报缺陷；两条臂均为强特征，不满足「200 就报」。
+  #   修复点：body 特征由裸 "Welcome to nginx!" 收紧为完整标题，避免正文提及该短语的文章页误报。
 
 http:
   - method: GET
     path:
       - "{{BaseURL}}/"
+    stop-at-first-match: true
+
+    matchers-condition: or
     matchers:
       - type: word
         part: header
@@ -22,5 +32,5 @@ http:
       - type: word
         part: body
         words:
-          - "Welcome to nginx!"
+          - "<title>Welcome to nginx!</title>"
         condition: or

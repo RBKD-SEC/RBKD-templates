@@ -4,24 +4,40 @@ info:
   name: Kafka Connect REST API Exposed
   author: internal
   severity: medium
-  description: Detects exposed Kafka Connect REST API allowing connector enumeration.
+  description: Detects exposed Apache Kafka Connect REST API, allowing unauthenticated connector enumeration via /connectors.
   metadata:
+    verified: false
     max-request: 1
-  tags: http,exposure,kafka
+  tags: http,exposure,kafka,kafka-connect
+
+  # 官方仅有 exposed-panels/kafka-connect-ui.yaml（UI 面板）与 misconfig/kafka-api-cluster.yaml
+  #   （Kafka 运维平台 /kafka/clusters），均未覆盖 Kafka Connect REST API 本体，本模板为有效补充。
+  #   修复点：原先多 matcher 未设 matchers-condition（默认 OR，任意 200 即报）；且 body 特征
+  #   为裸 "["/"]"（任何 JSON 数组都命中），无法保留。改用 REST 根路径（默认端口 8083）的
+  #   唯一指纹 {"version":..,"commit":..,"kafka_cluster_id":..}，命中即证明 API 暴露，
+  #   /connectors 枚举随之可达。
 
 http:
   - method: GET
     path:
-      - "{{BaseURL}}/connectors"
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "["
-          - "]"
-        condition: and
+      - "{{BaseURL}}"
+    stop-at-first-match: true
 
+    matchers-condition: and
+    matchers:
       - type: status
         status:
           - 200
+
+      - type: word
+        part: header
+        words:
+          - 'application/json'
+
+      - type: regex
+        part: body
+        regex:
+          - '"version"\s*:\s*"[^"]+"'
+          - '"commit"\s*:\s*"[^"]+"'
+          - '"kafka_cluster_id"'
         condition: and

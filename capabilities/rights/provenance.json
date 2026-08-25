@@ -21,26 +21,6 @@
       "spdx": "LicenseRef-UNKNOWN"
     },
     {
-      "content_digest": "sha256:2d2ca446d3fb2debd4402491aa0d2bdc58cb686dba7e0452c6f8e37d64997d55",
-      "contributor_authority": "unknown",
-      "decision": "held",
-      "destination": "http/exposures/consul-unauth.yaml",
-      "modifications": "",
-      "origin_class": "unknown",
-      "provenance_id": "prov-rbkd-consul-unauth-2d2ca446",
-      "reason": "pending upstream MIT provenance mapping and maintainer review",
-      "required_notices": [],
-      "reviewer": null,
-      "rights_basis": "unknown",
-      "source": {
-        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
-        "path": "unknown",
-        "revision": "unknown",
-        "url": "https://unknown"
-      },
-      "spdx": "LicenseRef-UNKNOWN"
-    },
-    {
       "content_digest": "sha256:838e2496712ea51a1d5ddb6a0c966368e8bdd75c2e4dc903a693e7486176f3a7",
       "contributor_authority": "unknown",
       "decision": "held",

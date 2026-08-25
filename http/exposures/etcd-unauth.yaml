@@ -6,23 +6,38 @@ info:
   severity: critical
   description: Detects etcd server allowing unauthenticated read access to all keys.
   metadata:
+    verified: false
     max-request: 1
   tags: http,exposure,etcd
+
+  # 官方仅有 etcd-version.yaml（/version 探测），未覆盖 v2 API 未授权读，本模板为有效补充。
+  #   修复点：原先多个 matcher 并列且未设 matchers-condition，nuclei 默认按 OR 组合，
+  #   任意 200 响应（如 SPA 路由兜底页）即误报；现要求 status/header/body 同时满足，
+  #   body 特征由裸 "node"/"key" 收紧为 v2 根目录读取的固定结构。
+  #   注意：仅覆盖 etcd v2 API（--enable-v2，3.4 起默认关闭）；v3 走 gRPC 网关，响应结构不同。
 
 http:
   - method: GET
     path:
       - "{{BaseURL}}/v2/keys"
     stop-at-first-match: true
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"node"'
-          - '"key"'
-        condition: and
 
+    matchers-condition: and
+    matchers:
       - type: status
         status:
           - 200
+
+      - type: word
+        part: header
+        words:
+          - 'application/json'
+
+      # etcd v2 根目录读取固定返回 {"action":"get","node":{...,"dir":true,...}}
+      - type: regex
+        part: body
+        regex:
+          - '"action"\s*:\s*"get"'
+          - '"node"\s*:\s*\{'
+          - '"dir"\s*:\s*true'
         condition: and

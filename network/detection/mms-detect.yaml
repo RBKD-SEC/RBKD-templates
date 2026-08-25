@@ -4,31 +4,70 @@ info:
   name: MMS (IEC 61850) Detect
   author: internal
   severity: info
-  description: Detects MMS (Manufacturing Message Specification / IEC 61850) via ISO COTP + Session handshake on port 102.
+  description: |
+    Detects MMS (Manufacturing Message Specification, IEC 61850-8-1) servers via a full
+    COTP/ISO/MMS Initiate handshake on TCP port 102, positively distinguishing them from
+    S7comm which shares the same port.
   metadata:
+    verified: false
     max-request: 1
-  tags: fingerprint,network,ics,mms
+  reference:
+    - https://nmap.org/nsedoc/scripts/iec61850-mms.html
+    - https://claroty.com/team82/research/mms-under-the-microscope-examining-the-security-of-a-power-automation-standard
+  tags: fingerprint,network,ics,mms,iec61850
+
+  # 判定方法（对齐 nmap 官方 iec61850-mms.nse）：
+  #   1) 发 COTP CR（src TSAP 0x0000 / dst TSAP 0x0001，TPDU size 1024），读连接确认 CC（11 d0）。
+  #      旧版此处是 11 d0（CC 码）当请求发，且 TSAP 用的 S7 风格 0100/0102，均已修正。
+  #   2) 发完整 ISO 8327 会话 + ISO 8823 表示 + ACSE AARQ + MMS Initiate-Request 静态报文
+  #      （211 字节，取自 nmap iec61850-mms.nse 的 MMS_INITIATE）。MMS 服务器应答为：
+  #      COTP DT(02 f0 80) + ISO 会话接受(01 00 01 00) + 表示层 CPA(61 8x) + MMS
+  #      Initiate-ResponsePDU(a9 8x)，三段结构特征同时满足才判定。
+  #   修复点：旧版两个 matcher 隐式 OR，matcher2 为 negative（不含 S7 特征即真），任何
+  #   102 端口上的非 S7 应答服务（甚至无应答）都会命中；S7 PLC 本身也因 CC 命中而误报。
+  #   现改为正向 MMS 应答指纹判定，S7comm 服务器对 MMS 式 TSAP 的 CR 通常拒绝或不回
+  #   MMS 应答，天然排除。
 
 tcp:
   - inputs:
-      - data: "\x03\x00\x00\x16\x11\xd0\x00\x01\x00\x01\x00\xc1\x02\x01\x00\xc2\x02\x01\x02\xc0\x01\x09"
-        read: 14
-      - data: "\x03\x00\x00\x0f\x02\xf0\x80\x32\x01\x00\x00\x00\x00\x00\x08\x00\x00\x00\x00"
+      - data: "0300001611e00000000100c1020000c2020001c0010a"
+        type: hex
+        read: 256
+        name: cotp
+      - data: "030000d302f0800dca0506130100160102140200023302000134020001c1b43181b1a003800101a281a9810400000001820400000001a423300f0201010604520100013004060251013010020103060528ca22020130040602510161763074020101a06f606da107060528ca220203a20706052901876701a30302010ca403020100a503020100a606060429018767a70302010ca803020100a903020100be33283106025101020103a028a826800300fde881010a82010a830105a416800101810305f100820c03ee1c00000000000000ed18"
+        type: hex
         read: 1024
+        name: mms
     host:
       - "{{Hostname}}"
     port: 102
+
+    matchers-condition: and
     matchers:
-      - type: word
-        part: raw
-        words:
-          - "\x03\x00\x00\x16"
-          - "\xd0"
+      # COTP CC：TPKT v3 + 总长 0x16 + LI 0x11（CC 的第 6 字节 0xd0 为高字节，见下方说明无法匹配）
+      - type: regex
+        part: cotp
+        regex:
+          - '\x03\x00\x00\x16\x11'
+
+      # 应答骨架：ISO 8327 会话数据接受(01 00 01 00) + ISO 8823 表示层 CPA 标签(61)
+      - type: regex
+        part: mms
+        regex:
+          - '\x01\x00\x01\x00\x61'
+
+      # 表示层 mode-selector(30 0b 02 01 01) 与 MMS 表示上下文 id 3（本 CR 协商的上下文）
+      - type: regex
+        part: mms
+        regex:
+          - '\x30\x0b\x02\x01\x01'
+          - '\x02\x01\x03'
         condition: and
-      - type: word
-        part: raw
-        words:
-          - "\x32\x03"
-          - "\xf0\x80"
-        condition: or
-        negative: true
+
+    # 重要经验（2026-08-25 实测 nuclei v3.11.0）：nuclei 的 regex matcher 按 Go regexp 语义
+    # 以 UTF-8 码点解释 \xNN —— 值 >= 0x80 的转义（如 \xd0、\xf0、\xa9）匹配的是该码点的
+    # UTF-8 双字节编码（c3 90 等），而非响应中的裸字节，永远无法命中二进制协议帧；值 <= 0x7f
+    # 则按单字节正确匹配。因此本模板的匹配锚点全部选自 ISO/MMS 帧中仅含低字节的片段，
+    # 高字节特征（COTP DT 的 02 f0 80、MMS a9 标签等）不可用于 regexp。
+    # 另：word matcher 的 YAML 双引号 "\xNN" 在 NN>=0x80 时同样被 YAML 解码为码点再被
+    # UTF-8 重编码（c3 90 陷阱），二进制特征一律走 regexp 且仅用低字节。

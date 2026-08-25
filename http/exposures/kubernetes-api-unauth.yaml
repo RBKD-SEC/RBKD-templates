@@ -6,22 +6,38 @@ info:
   severity: high
   description: Detects Kubernetes API server allowing unauthenticated access to namespace listing.
   metadata:
+    verified: false
     max-request: 1
   tags: http,exposure,kubernetes,k8s
+
+  # 与官方 nuclei-templates/http/technologies/kubernetes/kube-api/kube-api-namespaces.yaml 的差异：
+  #   官方 word matcher 为 '"NamespaceList":'，而 apiserver 紧凑 JSON 中该值后跟逗号
+  #   （"kind":"NamespaceList",），官方 matcher 在真实集群上永不命中；本模板修正特征串。
+  #   修复点：原先多个 matcher 并列且未设 matchers-condition，nuclei 默认按 OR 组合，
+  #   任意 200 响应（如 SPA 路由兜底页）即误报；现要求 status/header/body 同时满足。
 
 http:
   - method: GET
     path:
       - "{{BaseURL}}/api/v1/namespaces"
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"kind":"NamespaceList"'
-          - '"items"'
-        condition: and
+    stop-at-first-match: true
 
+    matchers-condition: and
+    matchers:
       - type: status
         status:
           - 200
+
+      - type: word
+        part: header
+        words:
+          - 'application/json'
+
+      # apiserver 输出紧凑 JSON，但正则容忍经代理重排后的空白，避免纯字符串匹配的脆弱性
+      - type: regex
+        part: body
+        regex:
+          - '"kind"\s*:\s*"NamespaceList"'
+          - '"apiVersion"\s*:\s*"v1"'
+          - '"items"\s*:\s*\['
         condition: and

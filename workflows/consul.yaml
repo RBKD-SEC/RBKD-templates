@@ -5,9 +5,11 @@ info:
   author: internal
   description: |
     Service-specific scan for consul. Covers: security exposure checks.
+    2026-08-25: 本地 consul-unauth 模板因与官方 hashicorp-consul-unauth 重复而删除（铁律 1），
+    覆盖改挂官方模板。
   tags: workflow,consul
 
 workflows:
   - template: http/exposed-panels/hashicorp-consul-agent.yaml
     subtemplates:
-      - template: RBKD-templates/http/exposures/consul-unauth.yaml
+      - template: http/misconfiguration/hashicorp-consul-unauth.yaml
