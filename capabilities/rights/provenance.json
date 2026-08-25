@@ -441,26 +441,6 @@
       "spdx": "LicenseRef-UNKNOWN"
     },
     {
-      "content_digest": "sha256:d9e1ee1ecae845054d0e87908f94ff95a766d6bc6eaa2a13783586d65d73bacf",
-      "contributor_authority": "unknown",
-      "decision": "held",
-      "destination": "http/technologies/thinkphp-detect.yaml",
-      "modifications": "",
-      "origin_class": "unknown",
-      "provenance_id": "prov-rbkd-thinkphp-detect-d9e1ee1e",
-      "reason": "pending upstream MIT provenance mapping and maintainer review",
-      "required_notices": [],
-      "reviewer": null,
-      "rights_basis": "unknown",
-      "source": {
-        "digest": "sha256:0000000000000000000000000000000000000000000000000000000000000000",
-        "path": "unknown",
-        "revision": "unknown",
-        "url": "https://unknown"
-      },
-      "spdx": "LicenseRef-UNKNOWN"
-    },
-    {
       "content_digest": "sha256:695f7c0fe324f7dcf94ee32f030482daa708af24fe634f8370946100a625db0d",
       "contributor_authority": "unknown",
       "decision": "held",
