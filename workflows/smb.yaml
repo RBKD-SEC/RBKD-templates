@@ -9,5 +9,3 @@ info:
 
 workflows:
   - template: RBKD-templates/network/detection/smb-detect.yaml
-    subtemplates:
-      - template: RBKD-templates/network/misconfig/smb-null-session.yaml

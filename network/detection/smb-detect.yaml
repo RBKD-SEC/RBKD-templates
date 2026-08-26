@@ -4,22 +4,72 @@ info:
   name: SMB Detect
   author: internal
   severity: info
-  description: Detects SMB service via banner.
+  description: |
+    Detects SMB service via the structure of real negotiate responses. Two independent
+    negotiate probes are sent on separate connections: a multi-protocol probe (dialects
+    NT LM 0.12 / SMB 2.002 / SMB 2.??? without the extended-security flag) answered by
+    SMB2+ servers with an SMB2 negotiate frame, and an SMB1 dialect-table probe with the
+    extended-security flag answered by SMB1-capable servers with an NT LM 0.12 selected
+    response (also the "SMB1 enabled" signal). Either response class proves SMB.
+  reference:
+    - https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-smb2/651e9d58-482b-4627-87e5-d2c9f8309ede
   metadata:
-    max-request: 1
+    # verified 依据（2026-08-26）：真靶正例 Samba 4.19.9 默认配置/NT1 开放两台 + 本机
+    # dperson/samba 镜像 lab-samba 全命中（NT1 靶机双路径各报一次）；真实反例
+    # lab-nginx/lab-tomcat/lab-grafana 不命中；fixture 反例 echo/含 SMB 字样
+    # HTTP/非 SMB 二进制不命中（tests/fixtures/smb-harness.py 5/5）。
+    verified: true
+    max-request: 2
   tags: fingerprint,network,smb
 
+  # 判定方法（任务书 docs/smb-null-session-echo-false-positive-fix-brief.md，实测 2026-08-26）：
+  #   旧版 matcher 是 word "SMB" OR "NT LM"——两个字符串都在请求自身字节里，任何 echo/反射
+  #   端口都会命中（run1 误报源）；且真实 SMB 协商响应以索引返回方言、不含 "NT LM" 字符串。
+  #   现改为两个独立 negotiate 请求，各自匹配真实响应独有的帧结构锚点（type: binary，规避
+  #   regex/word 的 \xNN 高字节 UTF-8 码点陷阱）：
+  #   1) 多协议探针（flags2=0x01c8，无扩展安全位）：SMB2 及以上服务器回 \xfeSMB 帧
+  #      negotiate 响应，锚点 fe534d424000 = 0xFE"SMB" + StructureSize 0x0040（注意协议
+  #      ID 是 FE 'S' 'M' 'B'，没有字符 '2'）。实测 Samba 4.19 默认/收紧配置、本机
+  #      lab-samba 均回 206B 该帧响应。带扩展安全位的过渡方言探针会被 Samba RST，勿用。
+  #   2) SMB1 方言表探针（flags2=0x53c8，扩展安全位）：SMB1 能力开启的服务器回
+  #      NT LM 0.12 选中响应，WordCount=0x11 + DialectIndex=0x0005（本探针固定方言表，
+  #      NT LM 0.12 为第 6 个），锚点二取 AND：SMB1 响应帧头 ff534d427200000000（echo
+  #      自身也含此串，故必须与 110500 联立）+ 结构字节 110500（请求与回显中不存在）。
+  #   已知缺口：Samba 4.19 在 server max protocol = NT1 时对两种探针都回"无方言"41B
+  #   拒绝帧，纯 SMB1-only 老栈（Win2000/XP 时代）本环境无法构造，未覆盖。
+  #   重要（2026-08-26 实测 nuclei v3.11.1）：network 模板的 binary matcher 必须显式
+  #   part: raw，否则不参与匹配（默认 part 不含原始响应；官方 dionaea-smb 模板未写
+  #   part，其 binary matcher 实际不生效——又一个名存实亡样例）。
 tcp:
+  # 请求 1：多协议协商（SMB2+ 服务器路径）
   - inputs:
-      - data: "\x00\x00\x00\x85\xff\x53\x4d\x42\x72\x00\x00\x00\x00\x18\x53\xc8\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xff\xfe\x00\x00\x00\x00\x00\x62\x00\x02\x50\x43\x20\x4e\x45\x54\x57\x4f\x52\x4b\x20\x50\x52\x4f\x47\x52\x41\x4d\x20\x31\x2e\x30\x00\x02\x4c\x41\x4e\x4d\x41\x4e\x31\x2e\x30\x00\x02\x57\x69\x6e\x64\x6f\x77\x73\x20\x66\x6f\x72\x20\x57\x6f\x72\x6b\x67\x72\x6f\x75\x70\x73\x20\x33\x2e\x31\x61\x00\x02\x4c\x4d\x31\x2e\x32\x58\x30\x30\x32\x00\x02\x4c\x41\x4e\x4d\x41\x4e\x32\x2e\x31\x00\x02\x4e\x54\x20\x4c\x4d\x20\x30\x2e\x31\x32\x00"
+      - data: "00000045ff534d4272000000000801c8000000000000000000000000ffff0100ffff0000002200024e54204c4d20302e31320002534d4220322e3030320002534d4220322e3f3f3f00"
+        type: hex
         read: 1024
     host:
       - "{{Hostname}}"
     port: 445
     matchers:
-      - type: word
+      - type: binary
         part: raw
-        words:
-          - "SMB"
-          - "NT LM"
-        condition: or
+        binary:
+          - "fe534d424000"
+
+  # 请求 2：SMB1 方言表（SMB1 能力开启路径）
+  - inputs:
+      - data: "00000085ff534d4272000000001853c80000000000000000000000000000fffe00000000006200025043204e4554574f524b2050524f4752414d20312e3000024c414e4d414e312e30000257696e646f777320666f7220576f726b67726f75707320332e316100024c4d312e325830303200024c414e4d414e322e3100024e54204c4d20302e313200"
+        type: hex
+        read: 1024
+    host:
+      - "{{Hostname}}"
+    port: 445
+    matchers-condition: and
+    matchers:
+      - type: binary
+        part: raw
+        binary:
+          - "ff534d427200000000"
+      - type: binary
+        part: raw
+        binary:
+          - "110500"
