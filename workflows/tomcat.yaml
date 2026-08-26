@@ -12,4 +12,4 @@ workflows:
     subtemplates:
       - template: http/default-logins/apache/tomcat-default-login.yaml
       - template: http/misconfiguration/tomcat-directory-listing.yaml
-      - template: http/exposed-panels/apache/public-tomcat-manager.yaml
+      - template: http/exposed-panels/apache/apache-tomcat-exposed.yaml
