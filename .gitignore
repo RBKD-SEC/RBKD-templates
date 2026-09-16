@@ -27,3 +27,6 @@ releases/
 # Local environment
 .env
 .venv/
+
+# dsh 本地运行时状态（shadow 校准等）
+.dsh/
