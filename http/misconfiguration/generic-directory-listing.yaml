@@ -1,0 +1,53 @@
+id: generic-directory-listing
+
+info:
+  name: Generic Directory Listing (Autoindex)
+  author: anchorscan
+  severity: medium
+  description: >
+    Web 服务器在根路径启用了目录列出（autoindex / directory listing），
+    未认证访问者可直接浏览目录下的文件与子目录清单，可能暴露备份文件、
+    配置文件、源码包与日志等敏感资源的准确路径。判定依据 autoindex 页面
+    特征（Apache/Nginx 的 "Index of"、Tomcat 的 "Directory Listing For"、
+    IIS 的 "[To Parent Directory]"）配合链接结构与响应形态，而非模糊的
+    相对路径字符匹配。
+  remediation: >
+    关闭目录列出：Nginx autoindex off；Apache Options -Indexes；Tomcat
+    将 DefaultServlet 的 listings 置为 false；IIS 关闭目录浏览功能。
+  classification:
+    cwe-id: CWE-548
+  metadata:
+    verified: true
+    max-request: 1
+  tags: anchorscan,misconfig,listing,vuln
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "Index of"
+          - "Directory Listing For"
+          - "[To Parent Directory]"
+        condition: or
+        case-insensitive: true
+
+      - type: word
+        part: body
+        words:
+          - "<a href="
+        case-insensitive: true
+
+      - type: regex
+        part: header
+        regex:
+          - "(?i)content-type:.*text/html"
+
+      - type: status
+        status:
+          - 200
