@@ -1,0 +1,66 @@
+{
+  "assets": [
+    {
+      "content_digest": "sha256:55479a54a12168066cd773e036261fce129b533cf742432a517cc410018746ec",
+      "contributor_authority": "owner",
+      "decision": "accepted",
+      "destination": "http/misconfiguration/generic-directory-listing.yaml",
+      "modifications": "",
+      "origin_class": "original",
+      "provenance_id": "prov-RBKD-templates-http-misconfiguration-generic-directory-listing-yaml-55479a54",
+      "reason": "accepted per owner instruction in 2026-09-18 session (unfreeze capability catalogs, internal use); not a maintainer self-review; public redistribution to be assessed separately",
+      "required_notices": [],
+      "reviewer": "owner-session-2026-09-18",
+      "rights_basis": "owner-authored-original",
+      "source": {
+        "digest": "sha256:55479a54a12168066cd773e036261fce129b533cf742432a517cc410018746ec",
+        "path": "http/misconfiguration/generic-directory-listing.yaml",
+        "revision": "unknown",
+        "url": "self-authored-no-upstream"
+      },
+      "spdx": "MIT"
+    },
+    {
+      "content_digest": "sha256:ef285cc0c3c85bfdb7220e805a7002cfb4874d57c0c73b9f1f4959aaea702ca3",
+      "contributor_authority": "owner",
+      "decision": "accepted",
+      "destination": "http/vulnerabilities/cups-web-lpe-version.yaml",
+      "modifications": "",
+      "origin_class": "original",
+      "provenance_id": "prov-RBKD-templates-http-vulnerabilities-cups-web-lpe-version-yaml-ef285cc0",
+      "reason": "accepted per owner instruction in 2026-09-18 session (unfreeze capability catalogs, internal use); not a maintainer self-review; public redistribution to be assessed separately",
+      "required_notices": [],
+      "reviewer": "owner-session-2026-09-18",
+      "rights_basis": "owner-authored-original",
+      "source": {
+        "digest": "sha256:ef285cc0c3c85bfdb7220e805a7002cfb4874d57c0c73b9f1f4959aaea702ca3",
+        "path": "http/vulnerabilities/cups-web-lpe-version.yaml",
+        "revision": "unknown",
+        "url": "self-authored-no-upstream"
+      },
+      "spdx": "MIT"
+    },
+    {
+      "content_digest": "sha256:a2e79b6874934ddc9bd901728731b3137d912d1e17a1686d7df1696ce31fc66a",
+      "contributor_authority": "owner",
+      "decision": "accepted",
+      "destination": "http/vulnerabilities/ollama-push-path-traversal.yaml",
+      "modifications": "",
+      "origin_class": "original",
+      "provenance_id": "prov-RBKD-templates-http-vulnerabilities-ollama-push-path-traversal-yaml-a2e79b68",
+      "reason": "accepted per owner instruction in 2026-09-18 session (unfreeze capability catalogs, internal use); not a maintainer self-review; public redistribution to be assessed separately",
+      "required_notices": [],
+      "reviewer": "owner-session-2026-09-18",
+      "rights_basis": "owner-authored-original",
+      "source": {
+        "digest": "sha256:a2e79b6874934ddc9bd901728731b3137d912d1e17a1686d7df1696ce31fc66a",
+        "path": "http/vulnerabilities/ollama-push-path-traversal.yaml",
+        "revision": "unknown",
+        "url": "self-authored-no-upstream"
+      },
+      "spdx": "MIT"
+    }
+  ],
+  "repository": "RBKD-templates",
+  "schema_version": 1
+}

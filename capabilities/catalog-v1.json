@@ -1,0 +1,110 @@
+{
+  "capabilities": [
+    {
+      "components": [],
+      "content_digest": "sha256:55479a54a12168066cd773e036261fce129b533cf742432a517cc410018746ec",
+      "contract": {
+        "inputs": [
+          "host",
+          "port",
+          "url"
+        ],
+        "interface_version": "nuclei-template-v1",
+        "negative_or_failure": "no match does not prove absence",
+        "positive_evidence": "Web 服务器在根路径启用了目录列出（autoindex / directory listing）， 未认证访问者可直接浏览目录下的文件与子目录清单，可能暴露备份文件、 配置文件、源码包与日志等敏感资源的准确路径。判定依据 autoindex 页面 特征（Apache/Nginx 的 \"Index of\"、Tomcat 的 \"Directory Listing For\"、 IIS 的 \"[To Parent Directory]\"）配合链接结构与响应形态，而非模糊的 相对路径字符匹配。\n",
+        "target_types": [
+          "host-port",
+          "url"
+        ]
+      },
+      "extensions": {
+        "rbkd": {
+          "reference": null,
+          "severity": "medium",
+          "tags": "anchorscan,misconfig,listing,vuln"
+        }
+      },
+      "id": "generic-directory-listing",
+      "kind": "nuclei-template",
+      "lifecycle": "active",
+      "path": "http/misconfiguration/generic-directory-listing.yaml",
+      "provenance_id": "prov-RBKD-templates-http-misconfiguration-generic-directory-listing-yaml-55479a54",
+      "replacement": null,
+      "requires": [],
+      "safety": "safe"
+    },
+    {
+      "components": [],
+      "content_digest": "sha256:ef285cc0c3c85bfdb7220e805a7002cfb4874d57c0c73b9f1f4959aaea702ca3",
+      "contract": {
+        "inputs": [
+          "host",
+          "port",
+          "url"
+        ],
+        "interface_version": "nuclei-template-v1",
+        "negative_or_failure": "no match does not prove absence",
+        "positive_evidence": "CUPS（OpenPrinting）\"Local print admin token disclosure using temporary printers\"：已获本地低权限代码执行的攻击者（前提：可访问 localhost:631 + 可绑非特权本地端口）可起假 IPP 服务，利用 cupsd 对 loopback 对端签发 \"local\" 证书的机制骗取 Authorization: Local 管理令牌，竞态持久化 file:/// device-uri 队列，以 root 落盘 /etc/sudoers.d 提权。影响 CUPS <=2.4.16（含 master 7dc51ee），修复 2.4.17（commit 9fa1c04 / e052dc4，禁 loopback local 证书并弃用明文文件写入后端）。利用为竞态型， 需重试。国内信源 QVD-2026-70361（奇安信 2026-09-18 通告，称 PoC 已公开 已复现；QVD<->CVE 映射为推测，无权威对照表）。 本模板仅对 631 web 面 GET / 提取版本横幅并对照受影响区间（<2.4.17）—— 端口/版本只是候选证据，不能冒充漏洞确认（Playbook ADR-0001 口径）： 命中仅说明版本落在受影响区间，实际可利用性需攻击者已具备本地执行前提， 且发行版 backport 不改版本号亦可致误报；落地后确证用 postex own/cups-lpe-check.sh（版本区间 + lpstat -v 利用痕迹三态判定）。\n",
+        "target_types": [
+          "host-port",
+          "url"
+        ]
+      },
+      "extensions": {
+        "rbkd": {
+          "reference": [
+            "https://github.com/OpenPrinting/cups/security/advisories/GHSA-c54j-2vqw-wpwp"
+          ],
+          "severity": "medium",
+          "tags": "anchorscan,cve,cve2026,cups,lpe,printer,version"
+        }
+      },
+      "id": "cups-web-lpe-version",
+      "kind": "nuclei-template",
+      "lifecycle": "active",
+      "path": "http/vulnerabilities/cups-web-lpe-version.yaml",
+      "provenance_id": "prov-RBKD-templates-http-vulnerabilities-cups-web-lpe-version-yaml-ef285cc0",
+      "replacement": null,
+      "requires": [],
+      "safety": "optional"
+    },
+    {
+      "components": [],
+      "content_digest": "sha256:a2e79b6874934ddc9bd901728731b3137d912d1e17a1686d7df1696ce31fc66a",
+      "contract": {
+        "inputs": [
+          "host",
+          "port",
+          "url"
+        ],
+        "interface_version": "nuclei-template-v1",
+        "negative_or_failure": "no match does not prove absence",
+        "positive_evidence": "Ollama <=0.1.45 的 POST /api/push 对 name 字段未做路径过滤： ParseModelPath 保留 \"..\" 段，GetManifestPath 用 filepath.Join 清洗后， 将清洗结果的绝对路径回显在 stat 错误消息中，构成文件存在性预言机 （目标不存在时返回 \"stat /root/.ollama/models/manifests/...: no such file or directory\"，存在时错误形态变为 couldn't open file），同时泄露 服务运行用户的 home 目录。仅泄露文件存在性，不含文件内容读取。 本模板探测 payload 的 registry 段固定为不可解析域名 invalid.invalid （3 段 name 形式，杜绝向真实 registry 出网），以回显路径中 \"..\" 已被 清洗（library 段消失）为命中判据。 修复状态存疑：厂商声称 0.1.46 已修复，但 v0.1.45 与 v0.1.46 的 server/modelpath.go 中 ParseModelPath 完全一致、均无 \"..\" 过滤。 0.3.14 实测（lab 负例）：registry/namespace 级 \"..\" 被校验拒绝 （{\"error\":\"invalid model path\"}）；model 段单级 \"..\" 虽仍被清洗 回显（错误动词由 stat 变为 open，残留 home 路径泄露），但清洗范围 被限制在 manifests 目录内部、无必然存在文件可供差分——存在性 预言机不可达，本模板不命中。负例验证使用 >=0.3.14。\n",
+        "target_types": [
+          "host-port",
+          "url"
+        ]
+      },
+      "extensions": {
+        "rbkd": {
+          "reference": [
+            "https://osv.dev/vulnerability/CVE-2024-39722",
+            "https://www.oligo.security/blog/more-models-more-probllms"
+          ],
+          "severity": "medium",
+          "tags": "anchorscan,cve,cve2024,ollama,llm,traversal"
+        }
+      },
+      "id": "ollama-push-path-traversal",
+      "kind": "nuclei-template",
+      "lifecycle": "active",
+      "path": "http/vulnerabilities/ollama-push-path-traversal.yaml",
+      "provenance_id": "prov-RBKD-templates-http-vulnerabilities-ollama-push-path-traversal-yaml-a2e79b68",
+      "replacement": null,
+      "requires": [],
+      "safety": "optional"
+    }
+  ],
+  "repository": "RBKD-templates",
+  "schema_version": 1
+}
