@@ -1,0 +1,68 @@
+id: cups-web-lpe-version
+
+info:
+  name: CUPS Local Print Admin Token Disclosure LPE - Version Candidate (CVE-2026-34990)
+  author: anchorscan
+  severity: medium
+  description: >
+    CUPS（OpenPrinting）"Local print admin token disclosure using temporary
+    printers"：已获本地低权限代码执行的攻击者（前提：可访问 localhost:631 +
+    可绑非特权本地端口）可起假 IPP 服务，利用 cupsd 对 loopback 对端签发
+    "local" 证书的机制骗取 Authorization: Local 管理令牌，竞态持久化
+    file:/// device-uri 队列，以 root 落盘 /etc/sudoers.d 提权。影响
+    CUPS <=2.4.16（含 master 7dc51ee），修复 2.4.17（commit 9fa1c04 /
+    e052dc4，禁 loopback local 证书并弃用明文文件写入后端）。利用为竞态型，
+    需重试。国内信源 QVD-2026-70361（奇安信 2026-09-18 通告，称 PoC 已公开
+    已复现；QVD<->CVE 映射为推测，无权威对照表）。
+    本模板仅对 631 web 面 GET / 提取版本横幅并对照受影响区间（<2.4.17）——
+    端口/版本只是候选证据，不能冒充漏洞确认（Playbook ADR-0001 口径）：
+    命中仅说明版本落在受影响区间，实际可利用性需攻击者已具备本地执行前提，
+    且发行版 backport 不改版本号亦可致误报；落地后确证用 postex
+    own/cups-lpe-check.sh（版本区间 + lpstat -v 利用痕迹三态判定）。
+  reference:
+    - https://github.com/OpenPrinting/cups/security/advisories/GHSA-c54j-2vqw-wpwp
+  remediation: >
+    升级 CUPS 至 2.4.17 或更高版本；631 端口（IPP/web 管理）不应暴露给
+    不可信网络；限制本机非特权用户的本地端口绑定面与 sudoers.d 写入监控。
+  classification:
+    cve-id: CVE-2026-34990
+    cpe: cpe:2.3:a:openprinting:cups:*:*:*:*:*:*:*:*
+  metadata:
+    verified: true
+    max-request: 1
+    vendor: openprinting
+    product: cups
+    shodan-query: html:"Home - CUPS"
+  tags: anchorscan,cve,cve2026,cups,lpe,printer,version
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+
+    matchers-condition: and
+    matchers:
+      - type: word
+        part: body
+        words:
+          - "CUPS"
+
+      - type: status
+        status:
+          - 200
+
+      # 版本候选判定：页面版本横幅 < 2.4.17 即命中（本机 nuclei v3.11.1 无
+      # compareVersions DSL，区间用 RE2 正则直接表达：1.x 全系（EOL，均在受影响
+      # 区间）/ 2.0-2.3.x 任意 / 2.4.0-2.4.16；2.4.17+ 与 2.5+、3.x 不命中）。
+      # RE2 无先行断言，故枚举十位段；2.x 主线不放开到 [0-9] 是防未来 2.5+ 误报。
+      - type: regex
+        part: body
+        regex:
+          - 'CUPS v?(?:1\.[0-9]\.[0-9]+|2\.[0-3]\.[0-9]+|2\.4\.(?:[0-9]|1[0-6]))\b'
+
+    extractors:
+      - name: version
+        type: regex
+        group: 1
+        regex:
+          - 'CUPS v?([0-9]+\.[0-9]+\.[0-9]+)'
