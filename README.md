@@ -103,6 +103,7 @@ cd releases/2026.08.10.1 && shasum -a 256 -c SHA256SUMS
 - **指纹先行**：先用 nmap / httpx 识别服务，再按服务名调用对应 workflow。
 - **极小字典**：弱口令模板最多 2 用户名 x 2 密码（4 次尝试），`stop-at-first-match: true`。
 - **90% 复用官方**：优先复制/改造 [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) 官方模板。
+- **版本匹配型模板强制声明（2026-09-19）**：matcher 靠版本号/横幅区间比对而非漏洞行为验证的模板（如 `cups-web-lpe-version`），必须在模板 `description` 显式写明「本 POC 为版本匹配型验证，命中仅说明版本落在受影响区间，不能冒充漏洞确认，可能存在误报（发行版 backport 不改版本号亦可致误报）」，并注明落地确证路径（postex/manual）；severity 按证据强度定级（通常 medium），不按漏洞本体危害。配套：Pentest-Playbook 手册/知识库对应条目同批加「验证方式=版本匹配，可能存在误报」说明，三层（模板/手册/知识库）声明同进同出。
 
 ## 快速开始
 

@@ -19,6 +19,9 @@ info:
     命中仅说明版本落在受影响区间，实际可利用性需攻击者已具备本地执行前提，
     且发行版 backport 不改版本号亦可致误报；落地后确证用 postex
     own/cups-lpe-check.sh（版本区间 + lpstat -v 利用痕迹三态判定）。
+    【版本匹配型声明】本 POC 为版本匹配型验证，命中仅说明版本落在
+    受影响区间，不能冒充漏洞确认，可能存在误报；手册与知识库条目
+    （qvd-2026-70361-cups-local-lpe）含同款说明。
   reference:
     - https://github.com/OpenPrinting/cups/security/advisories/GHSA-c54j-2vqw-wpwp
   remediation: >
