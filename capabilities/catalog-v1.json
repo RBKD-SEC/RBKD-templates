@@ -2,6 +2,47 @@
   "capabilities": [
     {
       "components": [],
+      "content_digest": "sha256:c68de7a4355f4d399deee8e9149d9d32a3edf0abb880bfa6c88219157c2f9cac",
+      "contract": {
+        "inputs": [
+          "host",
+          "port",
+          "url"
+        ],
+        "interface_version": "nuclei-template-v1",
+        "negative_or_failure": "no match does not prove absence",
+        "positive_evidence": "CVE-2025-39964：Linux 内核 AF_ALG（内核 crypto 用户态 API）并发写竞态本地 提权。同一 AF_ALG socket 并发 sendmsg 导致数据不可预测交错与 socket 内部 状态不一致，可构造任意内核写，非特权本地用户提权到 root。CVSS 7.8 AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H；CISA KEV 2026-09-18 收录（在野利用）。 前置：本地非特权代码执行 + CONFIG_CRYPTO_USER_API 系列启用（主流发行版 默认启用），非远程漏洞。引入 commit 8ff590903d5f（algif_skcipher 接口， mainline v2.6.38，2010 年；fix commits 的 Fixes: 行锚定）；修复 （af_alg_sendmsg 独占写所有权，新增 ctx->write）：5.10.245 / 5.15.194 / 6.1.154 / 6.6.108 / 6.12.49 / 6.16.9，6.17+ 含 mainline 修复 1b34cbbf4f01； 中间 EOL 分支（5.11-5.14 / 5.16-6.0 / 6.2-6.5 / 6.7-6.11 / 6.13-6.15） 无 stable 修复，均在受影响区间。本模板本地执行 uname -r、剥离发行版后缀 （-generic / -0ubuntu1xx / .x86_64 等，按「版本号后紧跟 - 或行尾」语义） 后对照受影响区间判定——版本号只是候选证据，不能冒充漏洞确认（Playbook ADR-0001 口径）：命中仅说明内核版本落在受影响区间，实际可利用性需攻击者 已具备本地低权限执行前提，且发行版 backport 修复不改版本号亦可致误报 （老 LTS 发行版可能已 backport 该修复而版本号不变）；落地后确证走人工 复核（postex：核对 /proc/config.gz 的 CONFIG_CRYPTO_USER_API*、发行版 changelog 是否 backport）。【版本匹配型声明】本 POC 为版本匹配型验证， 命中仅说明版本落在受影响区间，不能冒充漏洞确认，可能存在误报（发行版 backport 不改版本号亦可致误报）；手册条目（cve-2025-39964-afalg-lpe） 含同款说明。【运行要求】nuclei 对 code 协议模板默认禁用，须加 -code 参数 运行。【验证形态】verified=false：模板逻辑经 fixture 版本集门禁全链验证 （scripts/verify-afalg-race-lpe-version.sh：PATH shim 注入 fake uname + 真实 nuclei -code 引擎，24 正例 / 12 负例），无真实内核靶标（Docker 共享 宿主内核无法构造，武器化 brief §2.4 裁定不建 lab）。【EXP 参考（外部来源， 未逐文件验证，本仓不内嵌代码）】kernelCTF writeup https://sit-cybersecurity.com/af-alg-linux-lpe/ 与 EXP 仓库 https://github.com/n1k0oowang/CVE-2025-39964_EXP 。\n",
+        "target_types": [
+          "host-port",
+          "url"
+        ]
+      },
+      "extensions": {
+        "rbkd": {
+          "reference": [
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-39964",
+            "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+            "https://git.kernel.org/stable/c/1b34cbbf4f011a121ef7b2d7d6e6920a036d5285",
+            "https://git.kernel.org/stable/c/0f28c4adbc4a97437874c9b669fd7958a8c6d6ce",
+            "https://api.osv.dev/v1/vulns/CVE-2025-39964",
+            "https://sit-cybersecurity.com/af-alg-linux-lpe/",
+            "https://github.com/n1k0oowang/CVE-2025-39964_EXP"
+          ],
+          "severity": "medium",
+          "tags": "anchorscan,cve,cve2025,linux,kernel,lpe,afalg,version"
+        }
+      },
+      "id": "afalg-race-lpe-version",
+      "kind": "nuclei-template",
+      "lifecycle": "active",
+      "path": "code/vulnerabilities/afalg-race-lpe-version.yaml",
+      "provenance_id": "prov-RBKD-templates-code-vulnerabilities-afalg-race-lpe-version-yaml-c68de7a4",
+      "replacement": null,
+      "requires": [],
+      "safety": "optional"
+    },
+    {
+      "components": [],
       "content_digest": "sha256:55479a54a12168066cd773e036261fce129b533cf742432a517cc410018746ec",
       "contract": {
         "inputs": [
@@ -44,7 +85,7 @@
         ],
         "interface_version": "nuclei-template-v1",
         "negative_or_failure": "no match does not prove absence",
-        "positive_evidence": "CUPS（OpenPrinting）\"Local print admin token disclosure using temporary printers\"：已获本地低权限代码执行的攻击者（前提：可访问 localhost:631 + 可绑非特权本地端口）可起假 IPP 服务，利用 cupsd 对 loopback 对端签发 \"local\" 证书的机制骗取 Authorization: Local 管理令牌，竞态持久化 file:/// device-uri 队列，以 root 落盘 /etc/sudoers.d 提权。影响 CUPS <=2.4.16（含 master 7dc51ee），修复 2.4.17（commit 9fa1c04 / e052dc4，禁 loopback local 证书并弃用明文文件写入后端）。利用为竞态型， 需重试。国内信源 QVD-2026-70361（奇安信 2026-09-18 通告，称 PoC 已公开 已复现；QVD<->CVE 映射为推测，无权威对照表）。 本模板仅对 631 web 面 GET / 提取版本横幅并对照受影响区间（<2.4.17）—— 端口/版本只是候选证据，不能冒充漏洞确认（Playbook ADR-0001 口径）： 命中仅说明版本落在受影响区间，实际可利用性需攻击者已具备本地执行前提， 且发行版 backport 不改版本号亦可致误报；落地后确证用 postex own/cups-lpe-check.sh（版本区间 + lpstat -v 利用痕迹三态判定）。\n",
+        "positive_evidence": "CUPS（OpenPrinting）\"Local print admin token disclosure using temporary printers\"：已获本地低权限代码执行的攻击者（前提：可访问 localhost:631 + 可绑非特权本地端口）可起假 IPP 服务，利用 cupsd 对 loopback 对端签发 \"local\" 证书的机制骗取 Authorization: Local 管理令牌，竞态持久化 file:/// device-uri 队列，以 root 落盘 /etc/sudoers.d 提权。影响 CUPS <=2.4.16（含 master 7dc51ee），修复 2.4.17（commit 9fa1c04 / e052dc4，禁 loopback local 证书并弃用明文文件写入后端）。利用为竞态型， 需重试。国内信源 QVD-2026-70361（奇安信 2026-09-18 通告，称 PoC 已公开 已复现；QVD<->CVE 映射为推测，无权威对照表）。 本模板仅对 631 web 面 GET / 提取版本横幅并对照受影响区间（<2.4.17）—— 端口/版本只是候选证据，不能冒充漏洞确认（Playbook ADR-0001 口径）： 命中仅说明版本落在受影响区间，实际可利用性需攻击者已具备本地执行前提， 且发行版 backport 不改版本号亦可致误报；落地后确证用 postex own/cups-lpe-check.sh（版本区间 + lpstat -v 利用痕迹三态判定）。 【版本匹配型声明】本 POC 为版本匹配型验证，命中仅说明版本落在 受影响区间，不能冒充漏洞确认，可能存在误报；手册与知识库条目 （qvd-2026-70361-cups-local-lpe）含同款说明。\n",
         "target_types": [
           "host-port",
           "url"

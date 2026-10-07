@@ -59,6 +59,26 @@
         "url": "self-authored-no-upstream"
       },
       "spdx": "MIT"
+    },
+    {
+      "content_digest": "sha256:c68de7a4355f4d399deee8e9149d9d32a3edf0abb880bfa6c88219157c2f9cac",
+      "contributor_authority": "owner",
+      "decision": "accepted",
+      "destination": "code/vulnerabilities/afalg-race-lpe-version.yaml",
+      "modifications": "",
+      "origin_class": "original",
+      "provenance_id": "prov-RBKD-templates-code-vulnerabilities-afalg-race-lpe-version-yaml-c68de7a4",
+      "reason": "accepted per owner instruction in 2026-10-07 CVE-2025-39964 weaponization dispatch (docs/cve-2025-39964-afalg-lpe-brief.md); internal use; public redistribution to be assessed separately",
+      "required_notices": [],
+      "reviewer": "owner-session-2026-10-07",
+      "rights_basis": "owner-authored-original",
+      "source": {
+        "digest": "sha256:c68de7a4355f4d399deee8e9149d9d32a3edf0abb880bfa6c88219157c2f9cac",
+        "path": "code/vulnerabilities/afalg-race-lpe-version.yaml",
+        "revision": "unknown",
+        "url": "self-authored-no-upstream"
+      },
+      "spdx": "MIT"
     }
   ],
   "repository": "RBKD-templates",

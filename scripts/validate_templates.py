@@ -92,7 +92,7 @@ def check_nuclei_validate(errors):
         print("  nuclei CLI not available; skipping nuclei -validate")
         return
     # Validate only template directories, excluding .venv, capabilities, releases, scripts, tests
-    dirs = ["http", "network", "javascript", "workflows"]
+    dirs = ["http", "network", "javascript", "code", "workflows"]
     cmd = ["nuclei", "-validate"] + ["-t", *dirs]
     result = subprocess.run(
         cmd, cwd=rl.ROOT, text=True, capture_output=True, check=False)
