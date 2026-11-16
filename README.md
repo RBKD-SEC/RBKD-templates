@@ -69,6 +69,8 @@ ln -s ~/RBKD-templates ~/nuclei-templates/RBKD-templates
 │   ├── misconfiguration/       # 未授权、匿名访问、错误配置
 │   ├── default-logins/         # 默认口令
 │   └── vulnerabilities/        # CVE 漏洞
+├── code/                       # 本地 code 协议模板（nuclei -code 启用；unsigned
+│   └── vulnerabilities/        # 模板需本机 nuclei -sign 签名后才被引擎加载）
 ├── javascript/                 # JavaScript 协议模板
 │   └── default-logins/
 ├── dns/                        # DNS 模板
@@ -83,7 +85,7 @@ ln -s ~/RBKD-templates ~/nuclei-templates/RBKD-templates
 本仓库是 repository-orchestration-v2 的 `nuclei-template` 能力仓。发布门禁：
 
 - 每个 YAML 顶层 `id` 作为稳定能力 ID。
-- `capabilities/catalog-v1.json` 仅包含 provenance 审批为 `accepted` 的模板；当前全部模板处于 `held` 待审状态，因此 catalog 为空。
+- `capabilities/catalog-v1.json` 仅包含 provenance 审批为 `accepted` 的模板；自 2026-09-18 catalog 解冻起已有 accepted 条目在册（当前条目以 `capabilities/rights/provenance.json` 为准），不再为空。
 - 发布候选通过 `scripts/stage_release.py --calver YYYY.MM.DD.N` 生成，包含 catalog、schema、LICENSE（MIT）、NOTICE、provenance 与按原始路径保留的 accepted 模板。
 - 根布局与 `RBKD-templates` 名称保持不变，兼容现有命令。
 
@@ -103,6 +105,7 @@ cd releases/2026.08.10.1 && shasum -a 256 -c SHA256SUMS
 - **指纹先行**：先用 nmap / httpx 识别服务，再按服务名调用对应 workflow。
 - **极小字典**：弱口令模板最多 2 用户名 x 2 密码（4 次尝试），`stop-at-first-match: true`。
 - **90% 复用官方**：优先复制/改造 [nuclei-templates](https://github.com/projectdiscovery/nuclei-templates) 官方模板。
+- **版本匹配型模板强制声明（2026-09-19）**：matcher 靠版本号/横幅区间比对而非漏洞行为验证的模板（如 `cups-web-lpe-version`），必须在模板 `description` 显式写明「本 POC 为版本匹配型验证，命中仅说明版本落在受影响区间，不能冒充漏洞确认，可能存在误报（发行版 backport 不改版本号亦可致误报）」，并注明落地确证路径（postex/manual）；severity 按证据强度定级（通常 medium），不按漏洞本体危害。配套：Pentest-Playbook 手册/知识库对应条目同批加「验证方式=版本匹配，可能存在误报」说明，三层（模板/手册/知识库）声明同进同出。
 
 ## 快速开始
 

