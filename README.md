@@ -38,7 +38,6 @@ ln -s ~/RBKD-templates ~/nuclei-templates/RBKD-templates
 
 ~/RBKD-templates/              # 本仓库（独立 git 仓库，在官方目录之外）
 ├── http/
-├── network/
 └── workflows/
 ```
 
@@ -58,25 +57,11 @@ ln -s ~/RBKD-templates ~/nuclei-templates/RBKD-templates
 .
 ├── workflows/                  # 按服务拆分的工作流
 ├── http/                       # HTTP 协议模板
-│   ├── technologies/           # 指纹识别
-│   ├── exposures/              # 敏感暴露、未授权访问
-│   ├── default-logins/         # 默认口令
-│   ├── vulnerabilities/        # CVE 漏洞
+│   ├── canary/                 # 回调探针
 │   ├── misconfiguration/       # 错误配置
-│   └── exposed-panels/         # 面板检测
-├── network/                    # 网络协议模板
-│   ├── technologies/           # 指纹识别
-│   ├── misconfiguration/       # 未授权、匿名访问、错误配置
-│   ├── default-logins/         # 默认口令
 │   └── vulnerabilities/        # CVE 漏洞
 ├── code/                       # 本地 code 协议模板（nuclei -code 启用；unsigned
 │   └── vulnerabilities/        # 模板需本机 nuclei -sign 签名后才被引擎加载）
-├── javascript/                 # JavaScript 协议模板
-│   └── default-logins/
-├── dns/                        # DNS 模板
-├── payloads/                   # 极小字典
-│   ├── users-mini.txt
-│   └── passwords-mini.txt
 └── .github/workflows/          # CI
 ```
 
